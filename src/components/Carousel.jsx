@@ -84,7 +84,7 @@ const Carousel = () => {
                                         }}>
                                         </div>
 
-                                        <div id='caption'>
+                                        <div id='caption' style={{padding:'10px'}}>
                                             <div>
                                                 <a id='link' href={`/explore?${image.title}`} key={image.title}><h6 id='item'>{image.title}</h6></a>
 

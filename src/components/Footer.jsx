@@ -5,7 +5,6 @@ import Divider from '@mui/joy/Divider';
 import List from '@mui/joy/List';
 import ListSubheader from '@mui/joy/ListSubheader';
 import ListItem from '@mui/joy/ListItem';
-import ListItemDecorator from '@mui/joy/ListItemDecorator';
 import ListItemButton from '@mui/joy/ListItemButton';
 import Sheet from '@mui/joy/Sheet';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -68,7 +67,7 @@ export default function ColorInversionFooter() {
                             </List>
                         </ListItem>
                         <ListItem nested sx={{ width: { xs: '50%', md: 180 } }}>
-                            <ListSubheader>Other Projects</ListSubheader>
+                            <ListSubheader sx={{textAlign:'left'}}>Other Projects</ListSubheader>
                             <List sx={{ '--ListItemDecorator-size': '32px' }}>
                                 <ListItem>
                                     <ListItemButton>
