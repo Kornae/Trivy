@@ -72,49 +72,25 @@ export default function ColorInversionFooter() {
                             <List sx={{ '--ListItemDecorator-size': '32px' }}>
                                 <ListItem>
                                     <ListItemButton>
-                                        <ListItemDecorator>
-                                            <img
-                                                alt=""
-                                                src="/static/branding/product-core-dark.svg"
-                                                width="24"
-                                            />
-                                        </ListItemDecorator>
+                                
                                         <a id='link' href='https://petsi-kornae.vercel.app/'>Petsi</a>
                                     </ListItemButton>
                                 </ListItem>
                                 <ListItem>
                                     <ListItemButton>
-                                        <ListItemDecorator>
-                                            <img
-                                                alt=""
-                                                src="/static/branding/product-advanced-dark.svg"
-                                                width="24"
-                                            />
-                                        </ListItemDecorator>
+                        
                                         <a id='link' href='https://italy-ten.vercel.app/'>Italy</a>
                                     </ListItemButton>
                                 </ListItem>
                                 <ListItem>
                                     <ListItemButton>
-                                        <ListItemDecorator>
-                                            <img
-                                                alt=""
-                                                src="/static/branding/product-toolpad-dark.svg"
-                                                width="24"
-                                            />
-                                        </ListItemDecorator>
+                            
                                         <a id='link' href='https://weather-rho-olive.vercel.app/'>Weather</a>
                                     </ListItemButton>
                                 </ListItem>
                                 <ListItem>
                                     <ListItemButton>
-                                        <ListItemDecorator>
-                                            <img
-                                                alt=""
-                                                src="/static/branding/product-designkits-dark.svg"
-                                                width="24"
-                                            />
-                                        </ListItemDecorator>
+                        
                                         <a id='link' href='https://minimo-five.vercel.app/'>Minimo</a>
                                     </ListItemButton>
                                 </ListItem>
