@@ -6,10 +6,12 @@ import ColorInversionFooter from "./Footer";
 export default function QuizLayout() {
     return (
         <div id="quiz-layout" className="grid-container-3">
-            <div id="nav"> <Nav /></div>
-            <div id="quiz-card"> <QuizTemplate /></div>
-            <div id="footer"><ColorInversionFooter /></div>
+            <div id="nav2"><Nav /> </div>
+            <div id="s2"><QuizTemplate /></div>
+            <div id="footer2"><ColorInversionFooter /></div>
         </div>
     )
 }
+
+
 

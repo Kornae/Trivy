@@ -150,21 +150,31 @@ body {
 /*Quiz Layout*/
 #quiz-layout {
   display: grid;
-  grid-template-areas: 'nav nav nav'
-    'qc qc qc'
-    'ft ft ft';
+  grid-template-areas: 'nav2 nav2 nav2'
+    's2 s2 s2'
+    'ft2 ft2 ft2';
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: auto 2fr 1fr;
 }
 
-#quiz-card {
-  grid-area: qc;
+
+#nav2 {
+  grid-area: nav2;
 }
+
+#s2 {
+  grid-area: s2;
+}
+
+#footer2 {
+  grid-area: ft2;
+}
+
 
 
 
 #quiz-box {
-  background-color: #f5f7f9;
+      background-color: #f5f7f9;
   border: none;
   padding: 60px 0px;
   box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
@@ -189,6 +199,8 @@ body {
 #questions {
   display: grid;
   color: #2e2e2e;
+
+    padding: 50px 0px;
 }
 
 #logo-div {

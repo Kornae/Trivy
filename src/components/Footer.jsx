@@ -18,6 +18,7 @@ export default function ColorInversionFooter() {
                 bgcolor: `#f8f9fa`,
                 flexGrow: 1,
                 p: 2,
+                height:'100%'
 
             }}
         >

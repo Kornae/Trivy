@@ -111,6 +111,7 @@ function QuizTemplate() {
 
 
     const buttonStyle1 = {
+        margin: '5px',
         padding: '30px',
         fontSize: '1em',
         pointerEvents: isSelect ? 'none' : 'auto',
@@ -133,6 +134,7 @@ function QuizTemplate() {
     };
 
     const buttonStyle2 = {
+        margin: '5px',
         padding: '30px',
         fontSize: '1em',
         pointerEvents: isSelect ? 'none' : 'auto',
@@ -155,6 +157,7 @@ function QuizTemplate() {
     };
 
     const buttonStyle3 = {
+        margin: '5px',
         padding: '30px',
         fontSize: '1em',
         pointerEvents: isSelect ? 'none' : 'auto',
@@ -178,6 +181,7 @@ function QuizTemplate() {
     };
 
     const buttonStyle4 = {
+        margin: '5px',
         padding: '30px',
         fontSize: '1em',
         pointerEvents: isSelect ? 'none' : 'auto',
@@ -202,7 +206,7 @@ function QuizTemplate() {
     if (count < 10) {
 
         return (
-            <div id="quiz-box">
+            <div id="quiz-box" style={{ height: '100%' }}>
                 <div id="main-content" className="container">
                     <div id="questions" className="main-heading-div">
                         <div id="logo-div">
