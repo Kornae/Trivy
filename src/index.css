@@ -9,6 +9,11 @@ body {
   background-color: #ffffff;
 }
 
+#brand {
+  text-decoration: underline;
+  text-decoration-color: #8BD9C7;
+}
+
 #home {
   display: grid;
   grid-template-areas: 'nav'

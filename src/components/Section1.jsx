@@ -19,9 +19,9 @@ export default function Section1() {
             <div id="box1">
                 <div id="headings">
                     <div id="heading-text">
-                        <h1 id="title">Elevate Your Knowledge with Trivy.</h1>
+                        <h1 id="title">Elevate Your Knowledge with <span id="brand">Trivy.</span></h1>
                         <p id="subtitle">Empowering Minds & Cultivating Curiosity</p>
-                        <Button onClick={scrollToCarousel} variant="soft">Explore <KeyboardArrowDownIcon /></Button>
+                        <Button onClick={scrollToCarousel}  sx={{ color:'black'}}  variant="plain">Explore <KeyboardArrowDownIcon /></Button>
                     </div>
                 </div>
 
