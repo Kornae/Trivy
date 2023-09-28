@@ -1,17 +1,15 @@
 import React from "react";
-import Navbar from "./Navbar";
 import QuizTemplate from "./QuizTemplate";
-import Footer from "./Footer";
+import Nav from "./Nav";
+import ColorInversionFooter from "./Footer";
 
 export default function QuizLayout() {
     return (
-        <section id="first-section">
-            <div className="grid-container-3">
-                <Navbar />
-                <QuizTemplate />
-                <Footer />
-            </div>
-        </section>
+        <div id="quiz-layout" className="grid-container-3">
+            <div id="nav"> <Nav /></div>
+            <div id="quiz-card"> <QuizTemplate /></div>
+            <div id="footer"><ColorInversionFooter /></div>
+        </div>
     )
 }
 

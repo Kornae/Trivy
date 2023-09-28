@@ -5,7 +5,6 @@ import { useLoaderData } from "react-router-dom";
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import ProgressBar from "./ProgressBar";
 
-
 export const dataLoader = async () => {
     const path = window.location.search;
     const index = entertainment.findIndex((item) => item.title === path.slice(1) || item.alt === path.slice(1));
@@ -19,7 +18,6 @@ export const dataLoader = async () => {
 }
 
 function QuizTemplate() {
-
 
     useLoaderData().push({
         "category": null,
@@ -204,16 +202,13 @@ function QuizTemplate() {
     if (count < 10) {
 
         return (
-            <div id="quiz-box" className="card">
+            <div id="quiz-box">
                 <div id="main-content" className="container">
                     <div id="questions" className="main-heading-div">
-
                         <div id="logo-div">
-
                             <h1 id="quiz-h5">{logo}</h1>
                             <h4 id="quiz-h5">{title}</h4>
                             <h6 style={{ padding: '10px', color: '#929494' }} id="quiz-h5">Score: {score}</h6>
-
                         </div>
 
                         <div id="h1-div">

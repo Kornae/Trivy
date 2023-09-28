@@ -3,21 +3,30 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import entertainment from './Entertainment';
-import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import ButtonBase from '@mui/material/ButtonBase';
-import Typography from '@mui/material/Typography';
-
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 
 const Carousel = () => {
     const settings = {
-        infinite: false,
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        prevArrow: <button type="button">Previous</button>,
-        nextArrow: <button type="button">Next</button>,
-        dots: true,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        prevArrow: <button id='btn' type="button"><KeyboardArrowLeftIcon sx={{ color: '#616160' }} /></button>,
+        nextArrow: <button id='btn' type="button"><NavigateNextIcon sx={{ color: '#616160' }} /></button>,
+        dots: false,
         responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    dots: false,
+                },
+            },
             {
                 breakpoint: 768,
                 settings: {
@@ -32,10 +41,10 @@ const Carousel = () => {
 
     const ImageButton = styled(ButtonBase)(({ theme }) => ({
         position: 'relative',
-        height: 350,
+        height: 480,
         [theme.breakpoints.down('sm')]: {
             width: '100% !important',
-            height: 250,
+            height: 500,
 
         },
         '&:hover, &.Mui-focusVisible': {
@@ -46,107 +55,49 @@ const Carousel = () => {
             '& .MuiImageMarked-root': {
                 opacity: 0,
             },
-     
-        },
-    }));
-
-    const ImageSrc = styled('span')(({ theme }) => ({
-        position: 'absolute',
-        left: 0,
-        right: 0,
-        top: 0,
-        bottom: 0,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center 40%',
-        [theme.breakpoints.down('sm')]: {
-            borderRadius: '40px'
 
         },
-
     }));
 
-    const Image = styled('span')(({ theme }) => ({
-        position: 'absolute',
-        left: 0,
-        right: 0,
-        top: 0,
-        bottom: 0,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        color: theme.palette.common.white,
-
-    }));
-
-    const ImageBackdrop = styled('span')(({ theme }) => ({
-        position: 'absolute',
-        left: 0,
-        right: 0,
-        top: 0,
-        bottom: 0,
-        backgroundColor: theme.palette.common.black,
-        opacity: 0.3,
-        transition: theme.transitions.create('opacity'),
-        [theme.breakpoints.down('sm')]: {
-            borderRadius: '40px'
-
-        },
-
-    }));
-
-    const ImageMarked = styled('span')(({ theme }) => ({
-        height: 3,
-        width: 18,
-        backgroundColor: theme.palette.common.white,
-        position: 'absolute',
-        bottom: -2,
-        left: 'calc(50% - 9px)',
-        transition: theme.transitions.create('opacity'),
-
-    }));
 
     return (
         <div className="carousel-container" >
             <Slider {...settings}>
+                {
+                    entertainment.map((image) => {
+                        const img = `url(${image.img})`;
 
-                {entertainment.map((image) => {
-                    return (
+                        return (
 
-                      
-                        <ImageButton
-                            focusRipple
-                            key={image.title}
+                            <ImageButton
+                                focusRipple
+                                key={image.title}
+                            >
+                                <a id='link' href={`/explore?${image.title}`} key={image.title}>
+                                    <div id='content'>
 
-                        >
-                    
-                            <ImageSrc style={{ backgroundImage: `url(${image.img})` }}  />
+                                        <div id='image' style={{
+                                            backgroundImage: img,
 
+                                            backgroundSize: 'cover',
+                                            backgroundPosition: 'center',
+                                        }}>
+                                        </div>
 
-                            <ImageBackdrop className="MuiImageBackdrop-root" />
-                            <a href={`/explore?${image.title}`} key={image.title}>                       
-                            <Image>
-                                <Typography
-                                    component="span"
-                                    variant="subtitle1"
-                                    color="inherit"
-                                    sx={{
-                                        position: 'relative',
-                                        p: 4,
-                                        pt: 2,
-                                        pb: (theme) => `calc(${theme.spacing(1)} + 6px)`,
-                                    }}
-                                >
+                                        <div id='caption'>
+                                            <div>
+                                                <a id='link' href={`/explore?${image.title}`} key={image.title}><h6 id='item'>{image.title}</h6></a>
 
-                                    <Button style={{ color: 'inherit' }}>{image.title}</Button>
-                                    <ImageMarked className="MuiImageMarked-root" />
-                                </Typography>
-                            </Image>
-                            </a>
-                        </ImageButton>
-                       
-                    )
-                })}
+                                                <p id='price'>{image.category}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </ImageButton>
 
+                        )
+                    })
+                }
 
             </Slider>
         </div>
