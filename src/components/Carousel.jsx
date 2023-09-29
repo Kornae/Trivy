@@ -58,37 +58,27 @@ const Carousel = () => {
 
         },
     }));
-
-
     return (
         <div className="carousel-container" >
             <Slider {...settings}>
                 {
                     entertainment.map((image) => {
                         const img = `url(${image.img})`;
-
                         return (
-
                             <ImageButton
                                 focusRipple
                                 key={image.title}
                             >
                                 <a id='link' href={`/explore?${image.title}`} key={image.title}>
                                     <div id='content'>
-
                                         <div id='image' style={{
                                             backgroundImage: img,
-
                                             backgroundSize: 'cover',
                                             backgroundPosition: 'center',
                                         }}>
-                                        </div>
-
-                                        <div id='caption' style={{padding:'10px'}}>
-                                            <div>
+                                            <div id='carousel-text'>
                                                 <a id='link' href={`/explore?${image.title}`} key={image.title}><h6 id='item'>{image.title}</h6></a>
-
-                                                <p id='price'>{image.category}</p>
+                                                <p id='category'>{image.category}</p>
                                             </div>
                                         </div>
                                     </div>

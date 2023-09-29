@@ -30,6 +30,14 @@ import TimeToLeaveIcon from '@mui/icons-material/TimeToLeave';
 const entertainment = [
     {
         id: 1,
+        title: 'Animals',
+        img: 'https://images.unsplash.com/photo-1592194996308-7b43878e84a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80',
+        api: 'https://opentdb.com/api.php?amount=10&category=27&type=multiple&encode=url3986',
+        category: 'Educational',
+        logo: <PetsIcon fontSize='small' />
+    },
+    {
+        id: 2,
         title: 'Sports',
         img: 'https://images.unsplash.com/photo-1546608235-3310a2494cdf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDd8fHNwb3J0c3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60',
         api: 'https://opentdb.com/api.php?amount=10&category=21&type=multiple&encode=url3986',
@@ -37,7 +45,7 @@ const entertainment = [
         logo: <SportsSoccerIcon fontSize='small' />
     },
     {
-        id: 2,
+        id: 3,
         title: 'Computer Science',
         alt: 'Computer%20Science',
         img: 'https://images.unsplash.com/photo-1488485339565-566d63f7dbb7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80',
@@ -46,23 +54,7 @@ const entertainment = [
         logo: <ComputerIcon fontSize='small' />
     },
     {
-        id: 3,
-        title: 'Vehicles',
-        img: 'https://images.unsplash.com/photo-1587181972975-ff4ecddeb30b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2864&q=80',
-        api: 'https://opentdb.com/api.php?amount=10&category=28&type=multiple&encode=url3986',
-        category: 'Misc',
-        logo: <TimeToLeaveIcon fontSize='small' />,
-    },
-    {
         id: 4,
-        title: 'Animals',
-        img: 'https://images.unsplash.com/photo-1592194996308-7b43878e84a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80',
-        api: 'https://opentdb.com/api.php?amount=10&category=27&type=multiple&encode=url3986',
-        category: 'Educational',
-        logo: <PetsIcon fontSize='small' />
-    },
-    {
-        id: 5,
         title: 'Gaming',
         img: 'https://images.unsplash.com/photo-1554213352-5ffe6534af08?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2296&q=80',
         api: 'https://opentdb.com/api.php?amount=10&category=15&type=multiple&encode=url3986',
@@ -70,7 +62,7 @@ const entertainment = [
         logo: <SportsEsportsIcon fontSize='small' />
     },
     {
-        id: 6,
+        id: 5,
         title: 'Politics',
         img: 'https://images.unsplash.com/photo-1515071970049-680dbd2a2339?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80',
         api: 'https://opentdb.com/api.php?amount=10&category=24&type=multiple&encode=url3986',
@@ -78,10 +70,18 @@ const entertainment = [
         logo: <GavelIcon fontSize='small' />
     },
     {
+        id: 6,
+        title: 'Vehicles',
+        img: 'https://images.unsplash.com/photo-1518306727298-4c17e1bf6942?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2836&q=80',
+        api: 'https://opentdb.com/api.php?amount=10&category=28&type=multiple&encode=url3986',
+        category: 'Misc',
+        logo: <TimeToLeaveIcon fontSize='small' />,
+    },
+    {
         id: 7,
         title: 'General Knowledge',
         alt: 'General%20Knowledge',
-        img: 'https://images.unsplash.com/photo-1564769610726-59cead6a6f8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2149&q=80',
+        img: 'https://images.unsplash.com/photo-1516962215378-7fa2e137ae93?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80',
         api: 'https://opentdb.com/api.php?amount=10&category=9&type=multiple&encode=url3986',
         category: 'Misc',
         logo: <SchoolIcon fontSize='small' />
@@ -97,7 +97,7 @@ const entertainment = [
     {
         id: 9,
         title: 'Books',
-        img: 'https://images.unsplash.com/photo-1547555999-14e818e09e33?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2832&q=80',
+        img: 'https://images.unsplash.com/photo-1519682337058-a94d519337bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80',
         api: 'https://opentdb.com/api.php?amount=10&category=10&type=multiple&encode=url3986',
         category: 'Misc',
         logo: <AutoStoriesIcon fontSize='small' />

@@ -15,7 +15,7 @@ export default function ColorInversionFooter() {
         <Sheet
             variant="solid"
             sx={{
-                bgcolor: `#f8f9fa`,
+                bgcolor: `#eceef0;`,
                 flexGrow: 1,
                 p: 2,
                 height:'100%'

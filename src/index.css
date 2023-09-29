@@ -1,6 +1,7 @@
 @import url('https://fonts.cdnfonts.com/css/nexa');
 @import url('https://fonts.cdnfonts.com/css/montserrat');
 
+
 * {
   font-family: 'Montserrat', sans-serif;
 }
@@ -68,6 +69,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+    -webkit-animation: text-focus-in 2s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+      animation: text-focus-in 1.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 
 
@@ -81,12 +84,18 @@ body {
   padding: 10px;
 }
 
+#exploreBtn {
+  background-color: #ddf4fe;
+  padding: 10px 40px;
+}
+
 #avatars {
   grid-area: avatars;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px 10px;
+
 }
 
 #avatar-group {
@@ -126,26 +135,40 @@ body {
 
 #content {
   display: grid;
-  grid-template-areas: 'image'
-    'caption';
-  grid-template-rows: 80% auto;
+  grid-template-areas: 'image';
+  grid-template-rows: 100%;
   grid-template-columns: 1fr;
   height: 100%;
   margin: .2rem;
 }
 
+#carousel-text {
+  background-color: #ffffff;
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+}
+
 #image {
+      display: flex;
+      justify-content: left;
+      align-items: flex-end;
   grid-area: image;
 }
 
-#caption {
+#category {
+  color: #787878;
+  font-size: .75rem;
+}
+
+/* #caption {
   grid-area: caption;
   padding: 10px 0px;
   text-align: left;
   display: flex;
   justify-content: left;
   align-items: center;
-}
+} */
 
 #link {
   text-decoration: none;
@@ -179,7 +202,7 @@ body {
 
 
 #quiz-box {
-      background-color: #f5f7f9;
+  background-color: #f5f7f9;
   border: none;
   padding: 60px 0px;
   box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
@@ -205,7 +228,7 @@ body {
   display: grid;
   color: #2e2e2e;
 
-    padding: 50px 0px;
+  padding: 50px 0px;
 }
 
 #logo-div {
@@ -264,4 +287,73 @@ body {
     padding: 10px;
   }
 
+}
+
+
+
+@-webkit-keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+
+@-webkit-keyframes tracking-in-expand-fwd-bottom {
+  0% {
+    letter-spacing: -.5em;
+    -webkit-transform: translateZ(-700px) translateY(500px);
+    transform: translateZ(-700px) translateY(500px);
+    opacity: 0
+  }
+
+  40% {
+    opacity: .6
+  }
+
+  100% {
+    -webkit-transform: translateZ(0) translateY(0);
+    transform: translateZ(0) translateY(0);
+    opacity: 1
+  }
+}
+
+@keyframes tracking-in-expand-fwd-bottom {
+  0% {
+    letter-spacing: -.5em;
+    -webkit-transform: translateZ(-700px) translateY(500px);
+    transform: translateZ(-700px) translateY(500px);
+    opacity: 0
+  }
+
+  40% {
+    opacity: .6
+  }
+
+  100% {
+    -webkit-transform: translateZ(0) translateY(0);
+    transform: translateZ(0) translateY(0);
+    opacity: 1
+  }
 }
