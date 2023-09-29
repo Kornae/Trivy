@@ -161,15 +161,6 @@ body {
   font-size: .75rem;
 }
 
-/* #caption {
-  grid-area: caption;
-  padding: 10px 0px;
-  text-align: left;
-  display: flex;
-  justify-content: left;
-  align-items: center;
-} */
-
 #link {
   text-decoration: none;
   color: inherit;
