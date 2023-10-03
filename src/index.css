@@ -237,13 +237,6 @@ body {
   line-height: 1.5;
 }
 
-.answer1:hover,
-.answer2:hover,
-.answer3:hover,
-.answer4:hover {
-  background-color: #eaedf1 !important;
-}
-
 #nextBtn,
 #doneBtn {
   background-color: #f5f9fe !important;
@@ -294,6 +287,16 @@ body {
 .message {
   -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
   animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+@media (min-width: 1023px) {
+
+  .answer1:hover,
+  .answer2:hover,
+  .answer3:hover,
+  .answer4:hover {
+    background-color: #eaedf1 !important;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {

@@ -214,10 +214,10 @@ function QuizTemplate() {
                         <div id="h1-div">
                             <h1 id="quiz-h1" className="quiz-question"> {decodeURIComponent(question)} </h1>
                         </div>
-                        <Button className="answer1" style={buttonStyle1} onClick={handleChoiceSelection} variant="soft" id={decodeURIComponent(questionArray[0])}>{decodeURIComponent(questionArray[0])} </Button>
-                        <Button className="answer2" style={buttonStyle2} onClick={handleChoiceSelection} variant="soft" id={decodeURIComponent(questionArray[1])}>{decodeURIComponent(questionArray[1])} </Button>
-                        <Button className="answer3" style={buttonStyle3} onClick={handleChoiceSelection} variant="soft" id={decodeURIComponent(questionArray[2])}>{decodeURIComponent(questionArray[2])} </Button>
-                        <Button className="answer4" style={buttonStyle4} onClick={handleChoiceSelection} variant="soft" id={decodeURIComponent(questionArray[3])}>{decodeURIComponent(questionArray[3])} </Button>
+                        <Button className="answer1" color="neutral" style={buttonStyle1} onClick={handleChoiceSelection} variant="soft" id={decodeURIComponent(questionArray[0])}>{decodeURIComponent(questionArray[0])} </Button>
+                        <Button className="answer2" color="neutral" style={buttonStyle2} onClick={handleChoiceSelection} variant="soft" id={decodeURIComponent(questionArray[1])}>{decodeURIComponent(questionArray[1])} </Button>
+                        <Button className="answer3" color="neutral" style={buttonStyle3} onClick={handleChoiceSelection} variant="soft" id={decodeURIComponent(questionArray[2])}>{decodeURIComponent(questionArray[2])} </Button>
+                        <Button className="answer4" color="neutral" style={buttonStyle4} onClick={handleChoiceSelection} variant="soft" id={decodeURIComponent(questionArray[3])}>{decodeURIComponent(questionArray[3])} </Button>
 
                         <div id="next-button" style={{ padding: '10px' }}>
                             {isSelect ? (<Button id="nextBtn" onClick={handeleClick} style={{ padding: '20px' }} variant="soft">Next <NavigateNextIcon /></Button>) : null}
