@@ -27,7 +27,7 @@ export default function Section1() {
 
                 <div id="avatars">
                     <div id="avatar-text">
-                        <p>18 Topics, Countless Quizzes</p>
+                        <p id="av-text">18 Topics, Countless Quizzes</p>
                         <div id="avatar-group">
                             <GroupAvatars />
                         </div>

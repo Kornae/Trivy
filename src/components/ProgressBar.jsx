@@ -23,7 +23,7 @@ const ProgressBar = ({ value, max, width = '100%', className = "" }) => {
         path1.setAttribute("fill", "none");
         path1.setAttribute("stroke-linecap", "round");
         path1.setAttribute("stroke-width", "6");
-        path1.setAttribute("stroke", "#EFEFEF ");
+        path1.setAttribute("stroke", "#eaedf1 ");
 
         const path2 = document.createElementNS("http://www.w3.org/2000/svg", "path");
         path2.setAttribute("d", "M20,50 A10,10 0 1,1 100,50");

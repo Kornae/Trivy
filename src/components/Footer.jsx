@@ -15,15 +15,14 @@ export default function ColorInversionFooter() {
         <Sheet
             variant="solid"
             sx={{
-                bgcolor: `#eceef0;`,
+                bgcolor: `transparent;`,
                 flexGrow: 1,
                 p: 2,
                 height:'100%'
-
             }}
         >
+        
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-
 
                 <IconButton variant="plain" color='neutral'>
                     <a id='link' href='https://github.com/Kornae'><GitHubIcon /></a>

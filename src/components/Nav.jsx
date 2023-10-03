@@ -10,10 +10,11 @@ export default function Nav() {
         <nav id="navbar" className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
                 <a className="navbar-brand" href="/"><span id="logo"><ChatBubbleOutlineIcon /> Trivy.</span></a>
-                <Button color="inherit" className="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <Button color="inherit" className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <FilterListIcon />
                 </Button>
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+
                     <div className="navbar-nav ms-auto">
                         <a className="nav-link nav-icons" href="https://github.com/Kornae"><GitHubIcon fontSize="small" /></a>
                         <a className="nav-link nav-icons" href="https://www.linkedin.com/in/kornae-m-a69a3b125/"><LinkedInIcon fontSize="small" /></a>

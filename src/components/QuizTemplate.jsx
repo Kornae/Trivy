@@ -1,24 +1,24 @@
 import React, { useState, useEffect } from "react";
-import { Button } from "@mui/material";
 import entertainment from "./Entertainment";
 import { useLoaderData } from "react-router-dom";
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import ProgressBar from "./ProgressBar";
+import Avatar from '@mui/joy/Avatar';
+import { Button } from "@mui/joy";
+// import Typography from '@mui/joy/Typography';
+
 
 export const dataLoader = async () => {
     const path = window.location.search;
     const index = entertainment.findIndex((item) => item.title === path.slice(1) || item.alt === path.slice(1));
     let api = entertainment[index].api;
-
     const res = await fetch(api);
     const quizData = await res.json()
 
     return quizData.results;
-
 }
 
 function QuizTemplate() {
-
     useLoaderData().push({
         "category": null,
         "type": null,
@@ -31,26 +31,24 @@ function QuizTemplate() {
             null
         ]
     })
-
+    const buttonDefaultColor = '#f5f9fe';
+    const buttonDefaultTextColor = '#424242';
     const [count, setCount] = useState(0);
     const [score, setScore] = useState(0);
     const [quest, setQuest] = useState(1);
     const [btnValue, setBtnValue] = useState(null);
     const [isSelect, setIsSelect] = useState(false);
     const [isCorrect, setIsCorrect] = useState(false);
-
     const [isIncorrect, setIsIncorrect] = useState(false);
     const [questionArray, setQuestionArray] = useState([]);
     const loaderData = useLoaderData();
-
     const question = useLoaderData()[count].question
 
     const path = window.location.search;
     const index = entertainment.findIndex((item) => item.title === path.slice(1) || item.alt === path.slice(1));
 
     let title = entertainment[index].title;
-
-    const logo = entertainment[index].logo;
+    const image = entertainment[index].img;
 
     useEffect(() => {
         const shuffledArray = [...loaderData[count].incorrect_answers, loaderData[count].correct_answer].sort(() => Math.random() - 0.5);
@@ -80,15 +78,12 @@ function QuizTemplate() {
         }
     }
 
-
     let returnHome = () => {
         window.location = '/'
     }
 
-
     const totalScore = (score * 10)
     let message = '';
-
 
     if (totalScore === 100) {
         message = "Congratulations! You achieved a perfect score! You're a 'Trivy' genius!";
@@ -107,9 +102,6 @@ function QuizTemplate() {
         message = "Keep going! Every attempt counts.";
     }
 
-
-
-
     const buttonStyle1 = {
         margin: '5px',
         padding: '30px',
@@ -122,7 +114,7 @@ function QuizTemplate() {
                     : isCorrect
                         ? '#edf2f1'
                         : null
-                : null,
+                : buttonDefaultColor,
         color:
             btnValue === decodeURIComponent(questionArray[0])
                 ? isIncorrect
@@ -130,7 +122,9 @@ function QuizTemplate() {
                     : isCorrect
                         ? '#39833b'
                         : null
-                : null
+                : buttonDefaultTextColor,
+
+        fontFamily: 'Montserrat'
     };
 
     const buttonStyle2 = {
@@ -145,7 +139,7 @@ function QuizTemplate() {
                     : isCorrect
                         ? '#edf2f1'
                         : null
-                : null,
+                : buttonDefaultColor,
         color:
             btnValue === decodeURIComponent(questionArray[1])
                 ? isIncorrect
@@ -153,7 +147,8 @@ function QuizTemplate() {
                     : isCorrect
                         ? '#39833b'
                         : null
-                : null
+                : buttonDefaultTextColor,
+        fontFamily: 'Montserrat'
     };
 
     const buttonStyle3 = {
@@ -168,7 +163,7 @@ function QuizTemplate() {
                     : isCorrect
                         ? '#edf2f1'
                         : null
-                : null,
+                : buttonDefaultColor,
 
         color:
             btnValue === decodeURIComponent(questionArray[2])
@@ -177,7 +172,8 @@ function QuizTemplate() {
                     : isCorrect
                         ? '#39833b'
                         : null
-                : null
+                : buttonDefaultTextColor,
+        fontFamily: 'Montserrat'
     };
 
     const buttonStyle4 = {
@@ -192,7 +188,7 @@ function QuizTemplate() {
                     : isCorrect
                         ? '#edf2f1'
                         : null
-                : null,
+                : buttonDefaultColor,
         color:
             btnValue === decodeURIComponent(questionArray[3])
                 ? isIncorrect
@@ -200,7 +196,8 @@ function QuizTemplate() {
                     : isCorrect
                         ? '#39833b'
                         : null
-                : null
+                : buttonDefaultTextColor,
+        fontFamily: 'Montserrat'
     };
 
     if (count < 10) {
@@ -210,23 +207,20 @@ function QuizTemplate() {
                 <div id="main-content" className="container">
                     <div id="questions" className="main-heading-div">
                         <div id="logo-div">
-                            <h1 id="quiz-h5">{logo}</h1>
+                            <div id="avatar-group" style={{ padding: '15px' }}> <Avatar size="lg" variant="solid" src={image} /></div>
                             <h4 id="quiz-h5">{title}</h4>
                             <h6 style={{ padding: '10px', color: '#929494' }} id="quiz-h5">Score: {score}</h6>
                         </div>
-
                         <div id="h1-div">
-                            <h1 id="quiz-h1"> {decodeURIComponent(question)} </h1>
+                            <h1 id="quiz-h1" className="quiz-question"> {decodeURIComponent(question)} </h1>
                         </div>
-                        <Button style={buttonStyle1} onClick={handleChoiceSelection} color="inherit" id={decodeURIComponent(questionArray[0])}>{decodeURIComponent(questionArray[0])} </Button>
-                        <Button style={buttonStyle2} onClick={handleChoiceSelection} color="inherit" id={decodeURIComponent(questionArray[1])}>{decodeURIComponent(questionArray[1])} </Button>
-                        <Button style={buttonStyle3} onClick={handleChoiceSelection} color="inherit" id={decodeURIComponent(questionArray[2])}>{decodeURIComponent(questionArray[2])} </Button>
-                        <Button style={buttonStyle4} onClick={handleChoiceSelection} color="inherit" id={decodeURIComponent(questionArray[3])}>{decodeURIComponent(questionArray[3])} </Button>
+                        <Button className="answer1" style={buttonStyle1} onClick={handleChoiceSelection} variant="soft" id={decodeURIComponent(questionArray[0])}>{decodeURIComponent(questionArray[0])} </Button>
+                        <Button className="answer2" style={buttonStyle2} onClick={handleChoiceSelection} variant="soft" id={decodeURIComponent(questionArray[1])}>{decodeURIComponent(questionArray[1])} </Button>
+                        <Button className="answer3" style={buttonStyle3} onClick={handleChoiceSelection} variant="soft" id={decodeURIComponent(questionArray[2])}>{decodeURIComponent(questionArray[2])} </Button>
+                        <Button className="answer4" style={buttonStyle4} onClick={handleChoiceSelection} variant="soft" id={decodeURIComponent(questionArray[3])}>{decodeURIComponent(questionArray[3])} </Button>
 
-                        <div id="next-button">
-
-                            {isSelect ? (<Button onClick={handeleClick} style={{ padding: '20px 100px', width: '100%' }} color="inherit">Next <NavigateNextIcon /></Button>) : null}
-
+                        <div id="next-button" style={{ padding: '10px' }}>
+                            {isSelect ? (<Button id="nextBtn" onClick={handeleClick} style={{ padding: '20px' }} variant="soft">Next <NavigateNextIcon /></Button>) : null}
                         </div>
                     </div>
 
@@ -242,7 +236,8 @@ function QuizTemplate() {
 
                         <div id="logo-div">
 
-                            <h1 id="quiz-h5">{logo}</h1>
+                            <div id="avatar-group" style={{ padding: '15px' }}> <Avatar variant="solid" src={image} /></div>
+
 
                             <h3 id="quiz-h5">{title}</h3>
 
@@ -252,8 +247,8 @@ function QuizTemplate() {
 
                             </div>
 
-                            <h3 style={{ padding: '20px' }} id="quiz-h5">{message}</h3>
-                            <Button onClick={returnHome} style={{ padding: '10px', width: '100%' }} color="inherit">Done</Button>
+                            <h3 style={{ padding: '20px' }} className="message" id="quiz-h5">{message}</h3>
+                            <Button id="doneBtn" onClick={returnHome} style={{ padding: '20px', width: '50%' }} variant="soft" color="neutral">Done</Button>
                         </div>
 
 
