@@ -66,6 +66,7 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 3fr 1fr;
   box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+  color: #424242;
 }
 
 #headings {
@@ -194,18 +195,22 @@ body {
   grid-area: nav2;
 }
 
+.navbar-brand {
+  color: #424242 !important;
+}
+
 #s2 {
   grid-area: s2;
 }
 
 #footer2 {
   grid-area: ft2;
-  background-color: #f5f9fe;
+  background-color: #ffffff;
 }
 
 
 #quiz-box {
-  background-color: #f8fcff;
+  background-color: #fcfcfc;
   border: none;
   padding: 60px 0px;
   box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
@@ -239,8 +244,9 @@ body {
 
 #nextBtn,
 #doneBtn {
-  background-color: #f5f9fe !important;
-  color: #2e2e2e !important;
+  background-color: #fdfdfd !important;
+  color: #424242 !important;
+      border-radius: 0px;
 }
 
 #nextBtn:hover,
@@ -312,6 +318,7 @@ body {
 
   #nextBtn {
     width: 100%;
+    border-radius: 0px;
   }
 
 }
@@ -329,6 +336,7 @@ body {
 
   #nextBtn {
     width: 100%;
+        border-radius: 0px;
   }
 
 }

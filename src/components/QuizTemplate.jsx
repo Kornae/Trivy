@@ -5,8 +5,6 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import ProgressBar from "./ProgressBar";
 import Avatar from '@mui/joy/Avatar';
 import { Button } from "@mui/joy";
-// import Typography from '@mui/joy/Typography';
-
 
 export const dataLoader = async () => {
     const path = window.location.search;
@@ -31,7 +29,7 @@ function QuizTemplate() {
             null
         ]
     })
-    const buttonDefaultColor = '#f5f9fe';
+    const buttonDefaultColor = '#fdfdfd';
     const buttonDefaultTextColor = '#424242';
     const [count, setCount] = useState(0);
     const [score, setScore] = useState(0);
@@ -105,7 +103,9 @@ function QuizTemplate() {
     const buttonStyle1 = {
         margin: '5px',
         padding: '30px',
-        fontSize: '1em',
+        fontSize: '1.1em',
+        fontWeight: '500',
+        borderRadius: '0px',
         pointerEvents: isSelect ? 'none' : 'auto',
         backgroundColor:
             btnValue === decodeURIComponent(questionArray[0])
@@ -130,7 +130,9 @@ function QuizTemplate() {
     const buttonStyle2 = {
         margin: '5px',
         padding: '30px',
-        fontSize: '1em',
+        fontSize: '1.1em',
+        fontWeight: '500',
+        borderRadius: '0px',
         pointerEvents: isSelect ? 'none' : 'auto',
         backgroundColor:
             btnValue === decodeURIComponent(questionArray[1])
@@ -154,7 +156,9 @@ function QuizTemplate() {
     const buttonStyle3 = {
         margin: '5px',
         padding: '30px',
-        fontSize: '1em',
+        fontSize: '1.1em',
+        fontWeight: '500',
+        borderRadius: '0px',
         pointerEvents: isSelect ? 'none' : 'auto',
         backgroundColor:
             btnValue === decodeURIComponent(questionArray[2])
@@ -179,7 +183,9 @@ function QuizTemplate() {
     const buttonStyle4 = {
         margin: '5px',
         padding: '30px',
-        fontSize: '1em',
+        fontSize: '1.1em',
+        fontWeight: '500',
+        borderRadius: '0px',
         pointerEvents: isSelect ? 'none' : 'auto',
         backgroundColor:
             btnValue === decodeURIComponent(questionArray[3])
@@ -212,7 +218,7 @@ function QuizTemplate() {
                             <h6 style={{ padding: '10px', color: '#929494' }} id="quiz-h5">Score: {score}</h6>
                         </div>
                         <div id="h1-div">
-                            <h1 id="quiz-h1" className="quiz-question"> {decodeURIComponent(question)} </h1>
+                            <h1 id="quiz-h1" className="quiz-question" style={{color:'#424242'}}> {decodeURIComponent(question)} </h1>
                         </div>
                         <Button className="answer1" color="neutral" style={buttonStyle1} onClick={handleChoiceSelection} variant="soft" id={decodeURIComponent(questionArray[0])}>{decodeURIComponent(questionArray[0])} </Button>
                         <Button className="answer2" color="neutral" style={buttonStyle2} onClick={handleChoiceSelection} variant="soft" id={decodeURIComponent(questionArray[1])}>{decodeURIComponent(questionArray[1])} </Button>
@@ -247,7 +253,7 @@ function QuizTemplate() {
 
                             </div>
 
-                            <h3 style={{ padding: '20px' }} className="message" id="quiz-h5">{message}</h3>
+                            <h3 style={{ padding: '20px', color:'#424242' }} className="message" id="quiz-h5">{message}</h3>
                             <Button id="doneBtn" onClick={returnHome} style={{ padding: '20px', width: '50%' }} variant="soft" color="neutral">Done</Button>
                         </div>
 
