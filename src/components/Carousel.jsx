@@ -11,7 +11,10 @@ import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 const Carousel = () => {
     const settings = {
         infinite: true,
-        autoplay: true,
+        useTransform: true,
+        swipe: true,
+        autoplay: false,
+        focusOnSelect: true,
         autoplaySpeed: 4000,
         slidesToShow: 4,
         slidesToScroll: 1,
@@ -33,6 +36,7 @@ const Carousel = () => {
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     dots: false,
+                    fade: true
                 },
             },
         ],
