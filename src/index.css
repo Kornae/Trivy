@@ -190,7 +190,7 @@ body {
     's2 s2 s2'
     'ft2 ft2 ft2';
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto 2fr 1fr;
+  grid-template-rows: auto 2fr .5fr;
 }
 
 
@@ -298,8 +298,29 @@ body {
   animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
 
-@media (min-width: 1023px) {
+@media(min-width: 1440px) {
+  #s1-container {
+      display: grid;
+      grid-template-areas: 'box1 box1 box1 box1'
+        'showcase showcase showcase showcase';
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 2fr 1.4fr;
+      padding: 15px;
+      gap: 1rem;
+    }
 
+        /*Quiz Layout*/
+        #quiz-layout {
+          display: grid;
+          grid-template-areas: 'nav2 nav2 nav2'
+            's2 s2 s2'
+            'ft2 ft2 ft2';
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-template-rows: auto 4fr .5fr;
+        }
+}
+
+@media (min-width: 1023px) {
   .answer1:hover,
   .answer2:hover,
   .answer3:hover,
