@@ -30,20 +30,21 @@ import TimeToLeaveIcon from '@mui/icons-material/TimeToLeave';
 const entertainment = [
     {
         id: 1,
-        title: 'Animals',
-        img: 'https://images.unsplash.com/photo-1592194996308-7b43878e84a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80',
-        api: 'https://opentdb.com/api.php?amount=10&category=27&type=multiple&encode=url3986',
-        category: 'Educational',
-        logo: <PetsIcon fontSize='small' />
-    },
-    {
-        id: 2,
         title: 'Sports',
-        img: 'https://images.unsplash.com/photo-1546608235-3310a2494cdf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDd8fHNwb3J0c3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60',
+        img: 'https://images.unsplash.com/photo-1629673487087-e506ddddf212?auto=format&fit=crop&q=80&w=2765&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         api: 'https://opentdb.com/api.php?amount=10&category=21&type=multiple&encode=url3986',
         category: 'Entertainment',
         logo: <SportsSoccerIcon fontSize='small' />
     },
+    {
+        id: 2,
+        title: 'Animals',
+        img: 'https://images.unsplash.com/photo-1612975921855-a5af89c90a27?auto=format&fit=crop&q=60&w=800&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8fA%3D%3D',
+        api: 'https://opentdb.com/api.php?amount=10&category=27&type=multiple&encode=url3986',
+        category: 'Educational',
+        logo: <PetsIcon fontSize='small' />
+    },
+
     {
         id: 3,
         title: 'Computer Science',
@@ -55,57 +56,59 @@ const entertainment = [
     },
     {
         id: 4,
-        title: 'Gaming',
-        img: 'https://images.unsplash.com/photo-1554213352-5ffe6534af08?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2296&q=80',
-        api: 'https://opentdb.com/api.php?amount=10&category=15&type=multiple&encode=url3986',
-        category: 'Entertainment',
-        logo: <SportsEsportsIcon fontSize='small' />
-    },
-    {
-        id: 5,
-        title: 'Politics',
-        img: 'https://images.unsplash.com/photo-1515071970049-680dbd2a2339?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80',
-        api: 'https://opentdb.com/api.php?amount=10&category=24&type=multiple&encode=url3986',
-        category: 'Misc',
-        logo: <GavelIcon fontSize='small' />
-    },
-    {
-        id: 6,
         title: 'Vehicles',
-        img: 'https://images.unsplash.com/photo-1518306727298-4c17e1bf6942?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2836&q=80',
+        img: 'https://images.unsplash.com/photo-1567808291548-fc3ee04dbcf0?auto=format&fit=crop&q=80&w=2787&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         api: 'https://opentdb.com/api.php?amount=10&category=28&type=multiple&encode=url3986',
         category: 'Misc',
         logo: <TimeToLeaveIcon fontSize='small' />,
     },
     {
-        id: 7,
+        id: 5,
+        title: 'Gaming',
+        img: 'https://images.pexels.com/photos/1373100/pexels-photo-1373100.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+        api: 'https://opentdb.com/api.php?amount=10&category=15&type=multiple&encode=url3986',
+        category: 'Entertainment',
+        logo: <SportsEsportsIcon fontSize='small' />
+    },
+
+    {
+        id: 6,
         title: 'General Knowledge',
         alt: 'General%20Knowledge',
-        img: 'https://images.unsplash.com/photo-1516962215378-7fa2e137ae93?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80',
+        img: 'https://images.unsplash.com/photo-1568285631212-f2429f80f5cc?auto=format&fit=crop&q=80&w=2591&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         api: 'https://opentdb.com/api.php?amount=10&category=9&type=multiple&encode=url3986',
         category: 'Misc',
         logo: <SchoolIcon fontSize='small' />
     },
     {
-        id: 8,
+        id: 7,
         title: 'Art',
-        img: 'https://images.unsplash.com/photo-1622542796254-5b9c46ab0d2f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80',
+        img: 'https://images.unsplash.com/photo-1567201864585-6baec9110dac?auto=format&fit=crop&q=80&w=2787&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         api: 'https://opentdb.com/api.php?amount=10&category=25&type=multiple&encode=url3986',
         category: 'Misc',
         logo: <ColorLensIcon fontSize='small' />
     },
     {
-        id: 9,
+        id: 8,
         title: 'Books',
-        img: 'https://images.unsplash.com/photo-1519682337058-a94d519337bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80',
+        img: 'https://images.unsplash.com/photo-1510172951991-856a654063f9?auto=format&fit=crop&q=80&w=2362&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         api: 'https://opentdb.com/api.php?amount=10&category=10&type=multiple&encode=url3986',
         category: 'Misc',
         logo: <AutoStoriesIcon fontSize='small' />
     },
+
+    {
+        id: 9,
+        title: 'Politics',
+        img: 'https://images.unsplash.com/photo-1541876788-2221e585da7f?auto=format&fit=crop&q=80&w=2034&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        api: 'https://opentdb.com/api.php?amount=10&category=24&type=multiple&encode=url3986',
+        category: 'Misc',
+        logo: <GavelIcon fontSize='small' />
+    },
     {
         id: 10,
         title: 'Geography',
-        img: 'https://images.unsplash.com/photo-1519709042477-8de6eaf1fdc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2992&q=80',
+        img: 'https://images.unsplash.com/photo-1598944999410-e93772fc48a5?auto=format&fit=crop&q=80&w=2871&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         api: 'https://opentdb.com/api.php?amount=10&category=22&type=multiple&encode=url3986',
         category: 'Educational',
         logo: <LandscapeIcon fontSize='small' />
@@ -114,7 +117,7 @@ const entertainment = [
         id: 11,
         title: 'Advanced Math',
         alt: 'Advanced%20Math',
-        img: 'https://images.unsplash.com/photo-1512551980832-13df02babc9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=928&q=80',
+        img: 'https://images.unsplash.com/photo-1522932753915-9ee97e43e3d9?auto=format&fit=crop&q=80&w=2597&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         api: 'https://opentdb.com/api.php?amount=10&category=19&type=multiple&encode=url3986',
         category: 'Educational',
         logo: <FunctionsIcon fontSize='small' />
@@ -139,7 +142,7 @@ const entertainment = [
     {
         id: 14,
         title: 'Television',
-        img: 'https://images.unsplash.com/photo-1551645120-d70bfe84c826?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2835&q=80',
+        img: 'https://images.unsplash.com/photo-1495563125611-fa99f0cd529f?auto=format&fit=crop&q=80&w=2864&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         api: 'https://opentdb.com/api.php?amount=10&category=14&type=multiple&encode=url3986',
         category: 'Entertainment',
         logo: <TvIcon fontSize='small' />
@@ -148,7 +151,7 @@ const entertainment = [
         id: 15,
         title: 'Movies & Film',
         alt: 'Movies%20&%20Film',
-        img: 'https://plus.unsplash.com/premium_photo-1676049462062-e8ec9b661675?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80',
+        img: 'https://images.unsplash.com/photo-1579642761360-eabd1cca1e81?auto=format&fit=crop&q=80&w=2667&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         api: 'https://opentdb.com/api.php?amount=10&category=11&type=multiple&encode=url3986',
         category: 'Entertainment',
         logo: <TheatersIcon fontSize='small' />
@@ -172,7 +175,7 @@ const entertainment = [
     {
         id: 18,
         title: 'Celebrities',
-        img: 'https://images.unsplash.com/photo-1589348972026-df051797cd66?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTYxfHxIb2xseXdvb2R8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60',
+        img: 'https://images.pexels.com/photos/15113134/pexels-photo-15113134/free-photo-of-academy-award-in-front-of-blue-alien-character.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
         api: 'https://opentdb.com/api.php?amount=10&category=26&type=multiple&encode=url3986',
         category: 'Entertainment',
         logo: <PeopleOutlineIcon fontSize='small' />

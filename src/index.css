@@ -11,7 +11,7 @@ body {
 
 #brand {
   text-decoration: underline;
-  text-decoration-color: #8adfbd;
+  text-decoration-color: #99e1e8;
 }
 
 #home {
@@ -59,7 +59,7 @@ body {
 #box1 {
   grid-area: box1;
   background-color: #f8f9fa;
-  border-radius: 0px;
+  border-radius: 10px;
   display: grid;
   grid-template-areas: 'headings headings headings'
     'avatars avatars avatars';
@@ -92,7 +92,7 @@ body {
 }
 
 #exploreBtn {
-  background-color: #ddf4fe;
+  background-color: #eef9fb;
   padding: 10px 40px;
 }
 
@@ -102,7 +102,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px 10px;
-    font-weight: 300;
+  font-weight: 300;
 }
 
 #av-text {
@@ -124,25 +124,25 @@ body {
 #showcase {
   grid-area: showcase;
   box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+  background-color: transparent;
+  padding: 5px 0px;
+  margin: 5px;
+  border-radius: 15px;
 }
 
 #btn {
   background-color: #ffffff;
   margin: .5px;
-}
-
-.slick-prev {
-  left: -3px !important;
-  z-index: 1;
+  border-radius: 50%;
   width: 50px !important;
   height: 50px !important;
+  z-index: 1;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+
 }
 
-.slick-next {
-  right: -3px !important;
-  z-index: 1;
-  width: 50px !important;
-  height: 50px !important;
+#cards {
+  border-radius: 10px;
 }
 
 .slick-next:before,
@@ -150,32 +150,22 @@ body {
   content: none !important;
 }
 
-#content {
-  display: grid;
-  grid-template-areas: 'image';
-  grid-template-rows: 100%;
-  grid-template-columns: 1fr;
-  height: 100%;
-  margin: .2rem;
+#carousel {
+  height: auto;
 }
 
 #carousel-text {
-  background-color: #ffffff;
+  background-color: #c2c2c2;
   width: 100%;
   text-align: left;
   padding: 10px;
-}
-
-#image {
-  display: flex;
-  justify-content: left;
-  align-items: flex-end;
-  grid-area: image;
+  display: none;
 }
 
 #category {
   color: #787878;
   font-size: .75rem;
+  display: flex;
 }
 
 #link {
@@ -249,7 +239,7 @@ body {
 #doneBtn {
   background-color: #fdfdfd !important;
   color: #424242 !important;
-      border-radius: 0px;
+  border-radius: 0px;
 }
 
 #nextBtn:hover,
@@ -300,27 +290,28 @@ body {
 
 @media(min-width: 1440px) {
   #s1-container {
-      display: grid;
-      grid-template-areas: 'box1 box1 box1 box1'
-        'showcase showcase showcase showcase';
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      grid-template-rows: 2fr 1.4fr;
-      padding: 15px;
-      gap: 1rem;
-    }
+    display: grid;
+    grid-template-areas: 'box1 box1 box1 box1'
+      'showcase showcase showcase showcase';
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 2fr auto;
+    padding: 15px;
+    gap: 1rem;
+  }
 
-        /*Quiz Layout*/
-        #quiz-layout {
-          display: grid;
-          grid-template-areas: 'nav2 nav2 nav2'
-            's2 s2 s2'
-            'ft2 ft2 ft2';
-          grid-template-columns: 1fr 1fr 1fr;
-          grid-template-rows: auto 4fr .5fr;
-        }
+  /*Quiz Layout*/
+  #quiz-layout {
+    display: grid;
+    grid-template-areas: 'nav2 nav2 nav2'
+      's2 s2 s2'
+      'ft2 ft2 ft2';
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 4fr .5fr;
+  }
 }
 
 @media (min-width: 1023px) {
+
   .answer1:hover,
   .answer2:hover,
   .answer3:hover,
@@ -360,7 +351,7 @@ body {
 
   #nextBtn {
     width: 100%;
-        border-radius: 0px;
+    border-radius: 0px;
   }
 
 }

@@ -7,6 +7,7 @@ import { styled } from '@mui/material/styles';
 import ButtonBase from '@mui/material/ButtonBase';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+import GradientCover from './Card';
 
 const Carousel = () => {
     const settings = {
@@ -16,7 +17,7 @@ const Carousel = () => {
         autoplay: false,
         focusOnSelect: true,
         autoplaySpeed: 4000,
-        slidesToShow: 4,
+        slidesToShow: 5,
         slidesToScroll: 1,
         prevArrow: <button id='btn' type="button"><KeyboardArrowLeftIcon sx={{ color: '#616160' }} /></button>,
         nextArrow: <button id='btn' type="button"><NavigateNextIcon sx={{ color: '#616160' }} /></button>,
@@ -44,10 +45,10 @@ const Carousel = () => {
 
     const ImageButton = styled(ButtonBase)(({ theme }) => ({
         position: 'relative',
-        height: 480,
+        height: 'auto',
         [theme.breakpoints.down('sm')]: {
             width: '100% !important',
-            height: 500,
+            height: 'auto',
 
         },
         '&:hover, &.Mui-focusVisible': {
@@ -66,25 +67,19 @@ const Carousel = () => {
             <Slider {...settings}>
                 {
                     entertainment.map((image) => {
-                        const img = `url(${image.img})`;
+
                         return (
+
                             <ImageButton
                                 focusRipple
                                 key={image.title}
                             >
                                 <a id='link' href={`/explore?${image.title}`} key={image.title}>
-                                    <div id='content'>
-                                        <div id='image' style={{
-                                            backgroundImage: img,
-                                            backgroundSize: 'cover',
-                                            backgroundPosition: 'center',
-                                        }}>
-                                            <div id='carousel-text'>
-                                                <a id='link' href={`/explore?${image.title}`} key={image.title}><h6 id='item'>{image.title}</h6></a>
-                                                <p id='category'>{image.category}</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <GradientCover
+                                        cImg={image.img}
+                                        title={image.title}
+                                        topic={image.category}
+                                    />
                                 </a>
                             </ImageButton>
 

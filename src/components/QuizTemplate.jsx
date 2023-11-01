@@ -218,7 +218,7 @@ function QuizTemplate() {
                             <h6 style={{ padding: '10px', color: '#929494' }} id="quiz-h5">Score: {score}</h6>
                         </div>
                         <div id="h1-div">
-                            <h1 id="quiz-h1" className="quiz-question" style={{color:'#424242'}}> {decodeURIComponent(question)} </h1>
+                            <h1 id="quiz-h1" className="quiz-question" style={{ color: '#424242' }}> {decodeURIComponent(question)} </h1>
                         </div>
                         <Button className="answer1" color="neutral" style={buttonStyle1} onClick={handleChoiceSelection} variant="soft" id={decodeURIComponent(questionArray[0])}>{decodeURIComponent(questionArray[0])} </Button>
                         <Button className="answer2" color="neutral" style={buttonStyle2} onClick={handleChoiceSelection} variant="soft" id={decodeURIComponent(questionArray[1])}>{decodeURIComponent(questionArray[1])} </Button>
@@ -226,7 +226,7 @@ function QuizTemplate() {
                         <Button className="answer4" color="neutral" style={buttonStyle4} onClick={handleChoiceSelection} variant="soft" id={decodeURIComponent(questionArray[3])}>{decodeURIComponent(questionArray[3])} </Button>
 
                         <div id="next-button" style={{ padding: '10px' }}>
-                            {isSelect ? (<Button id="nextBtn" onClick={handeleClick} style={{ padding: '20px', fontWeight:'300' }} variant="soft">Next <NavigateNextIcon /></Button>) : null}
+                            {isSelect ? (<Button id="nextBtn" onClick={handeleClick} style={{ padding: '20px', fontWeight: '300' }} variant="soft">Next <NavigateNextIcon /></Button>) : null}
                         </div>
                     </div>
 
@@ -253,8 +253,8 @@ function QuizTemplate() {
 
                             </div>
 
-                            <h3 style={{ padding: '20px', color:'#424242' }} className="message" id="quiz-h5">{message}</h3>
-                            <Button id="doneBtn" onClick={returnHome} style={{ padding: '20px', width: '50%', fontWeight:'300', borderRadius:'10px' }} variant="soft" color="neutral">Done</Button>
+                            <h3 style={{ padding: '20px', color: '#424242' }} className="message" id="quiz-h5">{message}</h3>
+                            <Button id="doneBtn" onClick={returnHome} style={{ padding: '20px', width: '50%', fontWeight: '300', borderRadius: '10px' }} variant="soft" color="neutral">Done</Button>
                         </div>
 
 

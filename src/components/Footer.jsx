@@ -18,10 +18,10 @@ export default function ColorInversionFooter() {
                 bgcolor: `transparent;`,
                 flexGrow: 1,
                 p: 2,
-                height:'100%',
+                height: '100%',
             }}
         >
-        
+
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
 
                 <IconButton variant="plain" color='neutral'>
@@ -67,29 +67,29 @@ export default function ColorInversionFooter() {
                             </List>
                         </ListItem>
                         <ListItem nested sx={{ width: { xs: '50%', md: 180 } }}>
-                            <ListSubheader sx={{textAlign:'left'}}>Other Projects</ListSubheader>
+                            <ListSubheader sx={{ textAlign: 'left' }}>Other Projects</ListSubheader>
                             <List sx={{ '--ListItemDecorator-size': '32px' }}>
                                 <ListItem>
                                     <ListItemButton>
-                                
+
                                         <a id='link' href='https://petsi-kornae.vercel.app/'>Petsi</a>
                                     </ListItemButton>
                                 </ListItem>
                                 <ListItem>
                                     <ListItemButton>
-                        
+
                                         <a id='link' href='https://italy-ten.vercel.app/'>Italy</a>
                                     </ListItemButton>
                                 </ListItem>
                                 <ListItem>
                                     <ListItemButton>
-                            
+
                                         <a id='link' href='https://weather-rho-olive.vercel.app/'>Weather</a>
                                     </ListItemButton>
                                 </ListItem>
                                 <ListItem>
                                     <ListItemButton>
-                        
+
                                         <a id='link' href='https://minimo-five.vercel.app/'>Minimo</a>
                                     </ListItemButton>
                                 </ListItem>
