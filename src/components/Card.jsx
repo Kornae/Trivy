@@ -25,7 +25,6 @@ export default function GradientCover(props) {
             />
             <CardContent sx={{ justifyContent: 'flex-end', alignItems: 'flex-start' }}>
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-
                     <div className='me-auto'>
                         <Typography sx={{ textAlign: 'left', fontFamily: 'Montserrat' }} level="title-lg" textColor="#fff">
                             {props.title}
