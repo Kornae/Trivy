@@ -1,8 +1,7 @@
 import React from "react";
 import GroupAvatars from "./Avatars";
 import Carousel from "./Carousel";
-import UnstyledSelectIntroduction from "./Select";
-import SearchIcon from '@mui/icons-material/Search';
+import AutocompleteIntroduction from "./AutoComplete";
 
 export default function Section1() {
     return (
@@ -12,10 +11,8 @@ export default function Section1() {
                     <div id="heading-text">
                         <h1 id="title">Elevate Your Knowledge with <span id="brand">Trivy.</span></h1>
                         <p id="subtitle">Empowering Minds & Cultivating Curiosity</p>
-                        <div style={{ justifyContent: 'center', display: 'flex', alignItems: 'center', padding: '5px' }}>
-                            <UnstyledSelectIntroduction
-                                search={<><SearchIcon fontSize="small" /> Search…</>}
-                            />
+                        <div id="searchBar" style={{ justifyContent: 'center', display: 'flex', alignItems: 'center', padding: '5px' }}>
+                            <AutocompleteIntroduction />
                         </div>
                     </div>
                 </div>

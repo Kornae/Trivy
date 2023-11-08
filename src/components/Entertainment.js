@@ -1,28 +1,18 @@
 import FunctionsIcon from '@mui/icons-material/Functions';
 import LandscapeIcon from '@mui/icons-material/Landscape';
 import ScienceIcon from '@mui/icons-material/Science';
-
-
 import SchoolIcon from '@mui/icons-material/School';
 import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
 import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
 import GavelIcon from '@mui/icons-material/Gavel';
-
-
 import PublicIcon from '@mui/icons-material/Public';
 import PetsIcon from '@mui/icons-material/Pets';
 import ColorLensIcon from '@mui/icons-material/ColorLens';
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
-
-
-
 import TvIcon from '@mui/icons-material/Tv';
 import TheatersIcon from '@mui/icons-material/Theaters';
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
 import BoltIcon from '@mui/icons-material/Bolt';
-
-
-
 import ComputerIcon from '@mui/icons-material/Computer';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import TimeToLeaveIcon from '@mui/icons-material/TimeToLeave';
@@ -51,7 +41,6 @@ const entertainment = [
         api: 'https://opentdb.com/api.php?amount=10&category=27&type=multiple&encode=url3986',
         category: 'Educational',
         logo: <PetsIcon fontSize='small' />
-        
     },
 
     {
@@ -63,7 +52,7 @@ const entertainment = [
         category: 'Educational',
         logo: <ComputerIcon fontSize='small' />
     },
-  
+
     {
         id: 5,
         title: 'Gaming',

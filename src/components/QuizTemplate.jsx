@@ -5,6 +5,7 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import ProgressBar from "./ProgressBar";
 import Avatar from '@mui/joy/Avatar';
 import { Button } from "@mui/joy";
+import SportsScoreIcon from '@mui/icons-material/SportsScore';
 
 export const dataLoader = async () => {
     const path = window.location.search;
@@ -215,16 +216,17 @@ function QuizTemplate() {
                         <div id="logo-div">
                             <div id="avatar-group" style={{ padding: '15px' }}> <Avatar size="lg" variant="solid" src={image} /></div>
                             <h4 id="quiz-h5">{title}</h4>
-                            <h6 style={{ padding: '10px', color: '#929494' }} id="quiz-h5">Score: {score}</h6>
+                            <h6 style={{ padding: '10px', color: '#929494' }} id="quiz-h5"><SportsScoreIcon /> Score: {score}</h6>
                         </div>
                         <div id="h1-div">
                             <h1 id="quiz-h1" className="quiz-question" style={{ color: '#424242' }}> {decodeURIComponent(question)} </h1>
                         </div>
+                        <div id="question-div">
                         <Button className="answer1" color="neutral" style={buttonStyle1} onClick={handleChoiceSelection} variant="soft" id={decodeURIComponent(questionArray[0])}>{decodeURIComponent(questionArray[0])} </Button>
                         <Button className="answer2" color="neutral" style={buttonStyle2} onClick={handleChoiceSelection} variant="soft" id={decodeURIComponent(questionArray[1])}>{decodeURIComponent(questionArray[1])} </Button>
                         <Button className="answer3" color="neutral" style={buttonStyle3} onClick={handleChoiceSelection} variant="soft" id={decodeURIComponent(questionArray[2])}>{decodeURIComponent(questionArray[2])} </Button>
                         <Button className="answer4" color="neutral" style={buttonStyle4} onClick={handleChoiceSelection} variant="soft" id={decodeURIComponent(questionArray[3])}>{decodeURIComponent(questionArray[3])} </Button>
-
+                        </div>
                         <div id="next-button" style={{ padding: '10px' }}>
                             {isSelect ? (<Button id="nextBtn" onClick={handeleClick} style={{ padding: '20px', fontWeight: '300' }} variant="soft">Next <NavigateNextIcon /></Button>) : null}
                         </div>
@@ -238,7 +240,7 @@ function QuizTemplate() {
         return (
             <div id="quiz-box" className="card">
                 <div id="main-content" className="container">
-                    <div id="questions" className="main-heading-div">
+                    <div id="results" className="main-heading-div">
 
                         <div id="logo-div">
 
