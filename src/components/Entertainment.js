@@ -19,9 +19,17 @@ import TimeToLeaveIcon from '@mui/icons-material/TimeToLeave';
 
 const entertainment = [
     {
+        id: 5,
+        title: 'Gaming',
+        img: 'https://images.unsplash.com/photo-1659101967085-36dc2abaeca7?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        api: 'https://opentdb.com/api.php?amount=10&category=15&type=multiple&encode=url3986',
+        category: 'Entertainment',
+        logo: <SportsEsportsIcon fontSize='small' />
+    },
+    {
         id: 1,
         title: 'Sports',
-        img: 'https://images.unsplash.com/photo-1629673487087-e506ddddf212?auto=format&fit=crop&q=80&w=2765&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        img: 'https://images.unsplash.com/photo-1592919505780-303950717480?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEzfHx8ZW58MHx8fHx8',
         api: 'https://opentdb.com/api.php?amount=10&category=21&type=multiple&encode=url3986',
         category: 'Entertainment',
         logo: <SportsSoccerIcon fontSize='small' />
@@ -43,14 +51,7 @@ const entertainment = [
         category: 'Educational',
         logo: <PetsIcon fontSize='small' />
     },
-    {
-        id: 5,
-        title: 'Gaming',
-        img: 'https://images.unsplash.com/photo-1659101967085-36dc2abaeca7?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        api: 'https://opentdb.com/api.php?amount=10&category=15&type=multiple&encode=url3986',
-        category: 'Entertainment',
-        logo: <SportsEsportsIcon fontSize='small' />
-    },
+ 
     {
         id: 3,
         title: 'Computer Science',
@@ -60,7 +61,7 @@ const entertainment = [
         category: 'Educational',
         logo: <ComputerIcon fontSize='small' />
     },
-
+ 
     {
         id: 6,
         title: 'General Knowledge',
