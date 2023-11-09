@@ -140,7 +140,7 @@ const StyledAutocompleteRoot = styled('div')(
     ({ theme }) => `
     font-family: 'Inter', sans-serif;
   font-weight: 400;
-  border-radius: 18px;
+  border-radius: 27px;
   color: ${theme.palette.mode === 'dark' ? cyan[300] : cyan[500]};
   background: ${theme.palette.mode === 'dark' ? cyan[900] : '#fff'};
   border: 0.5px solid ${theme.palette.mode === 'dark' ? grey[700] : grey[200]};
@@ -148,7 +148,7 @@ const StyledAutocompleteRoot = styled('div')(
         };
   display: flex;
   gap: 5px;
-  padding-right: 5px;
+  padding: 4px;
   overflow: hidden;
 @media (min-width: 1023px) {
   min-width: 450px;
@@ -307,6 +307,7 @@ const StyledPopupIndicator = styled(Button)(
     display: flex;
     justify-content: center;
     align-items:center;
+    color:#434D5B;
 
     &:hover {
       background-color: ${theme.palette.mode === 'dark' ? cyan[700] : cyan[100]};

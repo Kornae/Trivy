@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import entertainment from "./Entertainment";
 import { useLoaderData } from "react-router-dom";
-import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import ProgressBar from "./ProgressBar";
 import Avatar from '@mui/joy/Avatar';
 import { Button } from "@mui/joy";
 import SportsScoreIcon from '@mui/icons-material/SportsScore';
+import ProgressMobileStepper from "./Next";
 
 export const dataLoader = async () => {
     const path = window.location.search;
@@ -32,6 +32,7 @@ function QuizTemplate() {
     })
     const buttonDefaultColor = '#fdfdfd';
     const buttonDefaultTextColor = '#424242';
+    const buttonDefaultBorderColor = "0.1px solid #DAE2ED";
     const [count, setCount] = useState(0);
     const [score, setScore] = useState(0);
     const [quest, setQuest] = useState(1);
@@ -108,6 +109,13 @@ function QuizTemplate() {
         fontWeight: '500',
         borderRadius: '0px',
         pointerEvents: isSelect ? 'none' : 'auto',
+        border: btnValue === decodeURIComponent(questionArray[0])
+            ? isIncorrect
+                ? '0.1px solid #d3302f'
+                : isCorrect
+                    ? '0.1px solid #39833b'
+                    : null
+            : buttonDefaultBorderColor,
         backgroundColor:
             btnValue === decodeURIComponent(questionArray[0])
                 ? isIncorrect
@@ -135,6 +143,13 @@ function QuizTemplate() {
         fontWeight: '500',
         borderRadius: '0px',
         pointerEvents: isSelect ? 'none' : 'auto',
+         border: btnValue === decodeURIComponent(questionArray[1])
+            ? isIncorrect
+                ? '0.1px solid #d3302f'
+                : isCorrect
+                    ? '0.1px solid #39833b'
+                    : null
+            : buttonDefaultBorderColor,
         backgroundColor:
             btnValue === decodeURIComponent(questionArray[1])
                 ? isIncorrect
@@ -161,6 +176,13 @@ function QuizTemplate() {
         fontWeight: '500',
         borderRadius: '0px',
         pointerEvents: isSelect ? 'none' : 'auto',
+         border: btnValue === decodeURIComponent(questionArray[2])
+            ? isIncorrect
+                ? '0.1px solid #d3302f'
+                : isCorrect
+                    ? '0.1px solid #39833b'
+                    : null
+            : buttonDefaultBorderColor,
         backgroundColor:
             btnValue === decodeURIComponent(questionArray[2])
                 ? isIncorrect
@@ -188,6 +210,13 @@ function QuizTemplate() {
         fontWeight: '500',
         borderRadius: '0px',
         pointerEvents: isSelect ? 'none' : 'auto',
+         border: btnValue === decodeURIComponent(questionArray[3])
+            ? isIncorrect
+                ? '0.1px solid #d3302f'
+                : isCorrect
+                    ? '0.1px solid #39833b'
+                    : null
+            : buttonDefaultBorderColor,
         backgroundColor:
             btnValue === decodeURIComponent(questionArray[3])
                 ? isIncorrect
@@ -214,7 +243,7 @@ function QuizTemplate() {
                 <div id="main-content" className="container">
                     <div id="questions" className="main-heading-div">
                         <div id="logo-div">
-                            <div id="avatar-group" style={{ padding: '15px' }}> <Avatar size="lg" variant="solid" src={image} /></div>
+                            <div id="avatar-group" style={{ padding: '15px' }}> <Avatar id="avatar-logo" size="lg" variant="solid" src={image} /></div>
                             <h4 id="quiz-h5">{title}</h4>
                             <h6 style={{ padding: '10px', color: '#929494' }} id="quiz-h5"><SportsScoreIcon /> Score: {score}</h6>
                         </div>
@@ -228,7 +257,7 @@ function QuizTemplate() {
                         <Button className="answer4" color="neutral" style={buttonStyle4} onClick={handleChoiceSelection} variant="soft" id={decodeURIComponent(questionArray[3])}>{decodeURIComponent(questionArray[3])} </Button>
                         </div>
                         <div id="next-button" style={{ padding: '10px' }}>
-                            {isSelect ? (<Button id="nextBtn" onClick={handeleClick} style={{ padding: '20px', fontWeight: '300' }} variant="soft">Next <NavigateNextIcon /></Button>) : null}
+                            {isSelect ? (<ProgressMobileStepper handleNext={handeleClick} />) : null}
                         </div>
                     </div>
 
