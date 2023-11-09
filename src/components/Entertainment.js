@@ -26,6 +26,7 @@ const entertainment = [
         category: 'Entertainment',
         logo: <SportsSoccerIcon fontSize='small' />
     },
+ 
     {
         id: 4,
         title: 'Vehicles',
@@ -37,12 +38,19 @@ const entertainment = [
     {
         id: 2,
         title: 'Animals',
-        img: 'https://images.unsplash.com/photo-1612975921855-a5af89c90a27?auto=format&fit=crop&q=60&w=800&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8fA%3D%3D',
+        img: 'https://images.unsplash.com/photo-1626548307930-deac221f87d9?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Z2lyYWZmZXxlbnwwfHwwfHx8MA%3D%3D',
         api: 'https://opentdb.com/api.php?amount=10&category=27&type=multiple&encode=url3986',
         category: 'Educational',
         logo: <PetsIcon fontSize='small' />
     },
-
+    {
+        id: 5,
+        title: 'Gaming',
+        img: 'https://images.unsplash.com/photo-1659101967085-36dc2abaeca7?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        api: 'https://opentdb.com/api.php?amount=10&category=15&type=multiple&encode=url3986',
+        category: 'Entertainment',
+        logo: <SportsEsportsIcon fontSize='small' />
+    },
     {
         id: 3,
         title: 'Computer Science',
@@ -51,15 +59,6 @@ const entertainment = [
         api: 'https://opentdb.com/api.php?amount=10&category=18&type=multiple&encode=url3986',
         category: 'Educational',
         logo: <ComputerIcon fontSize='small' />
-    },
-
-    {
-        id: 5,
-        title: 'Gaming',
-        img: 'https://images.unsplash.com/photo-1590869895405-5fd96c5d4458?auto=format&fit=crop&q=60&w=800&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8M3w2MjAzNDQwNXx8ZW58MHx8fHx8',
-        api: 'https://opentdb.com/api.php?amount=10&category=15&type=multiple&encode=url3986',
-        category: 'Entertainment',
-        logo: <SportsEsportsIcon fontSize='small' />
     },
 
     {
@@ -74,7 +73,7 @@ const entertainment = [
     {
         id: 7,
         title: 'Art',
-        img: 'https://images.unsplash.com/photo-1567201864585-6baec9110dac?auto=format&fit=crop&q=80&w=2787&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        img: 'https://images.unsplash.com/photo-1565742672058-6c844f5afc2e?q=80&w=3027&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         api: 'https://opentdb.com/api.php?amount=10&category=25&type=multiple&encode=url3986',
         category: 'Misc',
         logo: <ColorLensIcon fontSize='small' />
@@ -166,7 +165,7 @@ const entertainment = [
     {
         id: 18,
         title: 'Celebrities',
-        img: 'https://images.pexels.com/photos/15113134/pexels-photo-15113134/free-photo-of-academy-award-in-front-of-blue-alien-character.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+        img: 'https://images.unsplash.com/photo-1648538836903-aa4e9ea103ac?q=80&w=2786&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         api: 'https://opentdb.com/api.php?amount=10&category=26&type=multiple&encode=url3986',
         category: 'Entertainment',
         logo: <PeopleOutlineIcon fontSize='small' />

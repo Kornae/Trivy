@@ -5,10 +5,9 @@ import AvatarGroup from '@mui/material/AvatarGroup';
 export default function GroupAvatars() {
     return (
         <AvatarGroup max={5}>
-            <Avatar id="av1" alt="photo1" src="https://images.unsplash.com/photo-1603454479679-23c6ec76da7b?auto=format&fit=crop&q=80&w=2832&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
-            <Avatar id="av1" alt="photo2" src="https://images.unsplash.com/photo-1592840496694-26d035b52b48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2268&q=80" />
-            <Avatar id="av1" alt="photo3" src="https://images.unsplash.com/photo-1572231290311-cfcd39bcef37?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEzfHx8ZW58MHx8fHx8" />
+            <Avatar id="av1" alt="photo1" src="https://images.unsplash.com/photo-1569114241780-d60b37693dbc?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D" />
             <Avatar id="av1" alt="photo4" src="https://images.unsplash.com/photo-1573306711662-9299f17b4200?auto=format&fit=crop&q=80&w=2616&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+            <Avatar id="av1" alt="photo2" src="https://images.unsplash.com/photo-1514855333255-65e03dd92cdc?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fG5lbW98ZW58MHx8MHx8fDA%3D" />
         </AvatarGroup>
     );
 }
