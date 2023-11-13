@@ -17,7 +17,7 @@ const Carousel = () => {
         autoplay: false,
         focusOnSelect: true,
         autoplaySpeed: 4000,
-        slidesToShow: 5,
+        slidesToShow: 6,
         slidesToScroll: 1,
         prevArrow: <button id='btn' className='slick-prev' type="button"><KeyboardArrowLeftIcon sx={{ color: '#616160' }} /></button>,
         nextArrow: <button id='btn' className='slick-next' type="button"><NavigateNextIcon sx={{ color: '#616160' }} /></button>,
