@@ -156,6 +156,8 @@ const StyledAutocompleteRoot = styled('div')(
   box-shadow: 0px 2px 4px ${theme.palette.mode === 'dark' ? 'rgba(0,0,0, 0.5)' : 'rgba(0,0,0, 0.05)'
         };
   display: flex;
+ justify-content: center;
+  align-items: center;
   gap: 5px;
   padding: 3px;
   overflow: hidden;
