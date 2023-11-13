@@ -53,21 +53,21 @@ export default function ColorInversionFooter() {
                         sx={{ flexGrow: 0, '--ListItem-radius': '8px' }}
                     >
                         <ListItem nested sx={{ width: { xs: '50%', md: 140 } }}>
-                            <ListSubheader>Topics</ListSubheader>
+                            <ListSubheader sx={{ fontFamily: 'Montserrat'}}>Topics</ListSubheader>
                             <List>
-                                <ListItem>
+                                <ListItem sx={{ fontFamily: 'Montserrat' }}>
                                     Educational
                                 </ListItem>
-                                <ListItem>
+                                <ListItem sx={{ fontFamily: 'Montserrat' }}>
                                     Entertainment
                                 </ListItem>
-                                <ListItem>
+                                <ListItem sx={{ fontFamily: 'Montserrat' }}>
                                     Misc
                                 </ListItem>
                             </List>
                         </ListItem>
                         <ListItem nested sx={{ width: { xs: '50%', md: 180 } }}>
-                            <ListSubheader sx={{ textAlign: 'left' }}>Other Projects</ListSubheader>
+                            <ListSubheader sx={{ textAlign: 'left', fontFamily: 'Montserrat' }}>Other Projects</ListSubheader>
                             <List sx={{ '--ListItemDecorator-size': '32px' }}>
                                 <ListItem>
                                     <ListItemButton>

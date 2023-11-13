@@ -11,7 +11,7 @@ body {
 
 #brand {
   text-decoration: underline;
-  text-decoration-color: #0fa3ff36;
+  text-decoration-color: #00c8ff7e;
   background-clip: text;
   -webkit-background-clip: text;
   color: #2e2e2e;
@@ -154,11 +154,20 @@ body {
   height: 50px !important;
   z-index: 1;
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-
 }
 
 #cards {
   border-radius: 10px;
+}
+
+.slick-prev {
+  left: -15px !important;
+  overflow: hidden !important;
+}
+
+.slick-next {
+  right: -15px !important;
+  overflow: hidden !important;
 }
 
 .slick-next:before,
