@@ -149,16 +149,15 @@ const StyledAutocompleteRoot = styled('div')(
     ({ theme }) => `
     font-family: 'Inter', sans-serif;
   font-weight: 400;
-  border-radius: 24px;
+  border-radius: 12px;
   color: ${theme.palette.mode === 'dark' ? cyan[300] : cyan[500]};
   background: ${theme.palette.mode === 'dark' ? cyan[900] : '#fff'};
   border: 0.5px solid ${theme.palette.mode === 'dark' ? grey[700] : grey[200]};
   box-shadow: 0px 2px 4px ${theme.palette.mode === 'dark' ? 'rgba(0,0,0, 0.5)' : 'rgba(0,0,0, 0.05)'
         };
   display: flex;
- justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 3px;
   padding: 3px;
   overflow: hidden;
 @media (min-width: 1023px) {
@@ -196,14 +195,14 @@ const StyledAutocompleteRoot = styled('div')(
 const StyledInput = styled('input')(
     ({ theme }) => `
   font-size: 0.875rem;
-  font-family: 'Nexa', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   line-height: 1.5;
   color: ${theme.palette.mode === 'dark' ? grey[300] : grey[900]};
   background: inherit;
   border: none;
   border-radius: none;
-  padding: 8px 8px;
+  padding: 8px;
   outline: 0;
   flex: 1 0 auto;
   

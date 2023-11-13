@@ -9,17 +9,14 @@ body {
   background-color: #ffffff;
 }
 
-/* #brand {
-  text-decoration: underline;
-  text-decoration-color: #99e8e8;
-} */
 #brand {
-  background-image: linear-gradient(to right bottom, #95ccff, #76b7ff, #a5c5fc, #6f84ff, #8762fd);
+  text-decoration: underline;
+  text-decoration-color: #0fa3ff36;
   background-clip: text;
   -webkit-background-clip: text;
-  /* For Safari */
-  color: transparent;
+  color: #2e2e2e;
 }
+
 
 #home {
   display: grid;
@@ -88,10 +85,10 @@ body {
 
 
 #title {
-  font-size: 4.3rem;
+  font-size: 5rem;
   padding: 10px;
   color: #2e2e2e;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 #subtitle {
@@ -376,7 +373,7 @@ body {
 
 @media (min-width: 768px) and (max-width: 1023px) {
   #title {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     padding: 10px;
   }
 
@@ -395,7 +392,7 @@ body {
 
 @media (max-width: 767px) {
   #title {
-    font-size: 3rem;
+    font-size: 4rem;
     padding: 10px;
   }
 

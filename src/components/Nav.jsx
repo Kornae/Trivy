@@ -4,6 +4,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { Button } from "@mui/material";
 import ModeCommentOutlinedIcon from '@mui/icons-material/ModeCommentOutlined';
 import ShortTextIcon from '@mui/icons-material/ShortText';
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 
 export default function Nav() {
     return (
@@ -16,6 +17,7 @@ export default function Nav() {
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
 
                     <div className="navbar-nav ms-auto">
+                        <a className="nav-link nav-icons" href="/"><HomeRoundedIcon fontSize="small" /></a>
                         <a className="nav-link nav-icons" href="https://github.com/Kornae"><GitHubIcon fontSize="small" /></a>
                         <a className="nav-link nav-icons" href="https://www.linkedin.com/in/kornae-m-a69a3b125/"><LinkedInIcon fontSize="small" /></a>
                     </div>
