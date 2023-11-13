@@ -7,6 +7,10 @@ import { styled } from '@mui/system';
 import { unstable_useForkRef as useForkRef } from '@mui/utils';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import entertainment from './Entertainment';
+import Avatar from '@mui/material/Avatar';
+import IconButton from '@mui/material/IconButton';
+import SearchIcon from '@mui/icons-material/Search';
+import Divider from '@mui/material/Divider';
 
 const Autocomplete = React.forwardRef(function Autocomplete(props, ref) {
     const {
@@ -41,6 +45,10 @@ const Autocomplete = React.forwardRef(function Autocomplete(props, ref) {
                 ref={rootRef}
                 className={focused ? 'focused' : undefined}
             >
+          <IconButton sx={{ p: '10px' }} aria-label="menu">
+            <SearchIcon />
+          </IconButton>
+          <Divider orientation="vertical" variant="middle" flexItem />
                 <StyledInput
                     id={id}
                     disabled={disabled}
@@ -48,13 +56,15 @@ const Autocomplete = React.forwardRef(function Autocomplete(props, ref) {
                     {...getInputProps()}
                     placeholder='Search…'
                 />
-
-                <StyledPopupIndicator
-                    {...getPopupIndicatorProps()}
-                    className={popupOpen ? 'popupOpen' : undefined}
-                >
-                    <ArrowDropDownIcon />
-                </StyledPopupIndicator>
+          <IconButton             {...getPopupIndicatorProps()}
+            sx={{ p: '10px' }} aria-label="menu">
+            <StyledPopupIndicator
+              className={popupOpen ? 'popupOpen' : undefined}
+            >
+              <ArrowDropDownIcon />
+            </StyledPopupIndicator>
+          </IconButton>
+          
             </StyledAutocompleteRoot>
             {anchorEl ? (
                 <Popper
@@ -70,12 +80,11 @@ const Autocomplete = React.forwardRef(function Autocomplete(props, ref) {
                 >
 
                     <StyledListbox {...getListboxProps()}>
+                    
                         {
-                            groupedOptions.map((option, index) => {
+                groupedOptions.sort((a, b) => a.label.localeCompare(b.label)).map((option, index) => {
                                 const optionProps = getOptionProps({ option, index });
-                                return <a id='link' href={`/explore?${option.label}`} key={option.label}><StyledOption {...optionProps}><div style={{ display: 'flex', justifyContent: 'left', alignItems: 'center', padding: '2px' }}><span style={{ marginRight: '6px' }}>{option.logo}</span> {option.label}</div></StyledOption></a>;
-
-
+                              return <a id='link' href={`/explore?${option.label}`} key={option.label}><StyledOption {...optionProps}><div style={{ display: 'flex', justifyContent: 'left', alignItems: 'center', padding: '2px' }}><span style={{ marginRight: '6px' }}><Avatar id='search-img' alt="image" src={option.img} /></span> {option.label}</div></StyledOption></a>;
                             })}
 
                         {groupedOptions.length === 0 && (
@@ -140,7 +149,7 @@ const StyledAutocompleteRoot = styled('div')(
     ({ theme }) => `
     font-family: 'Inter', sans-serif;
   font-weight: 400;
-  border-radius: 27px;
+  border-radius: 24px;
   color: ${theme.palette.mode === 'dark' ? cyan[300] : cyan[500]};
   background: ${theme.palette.mode === 'dark' ? cyan[900] : '#fff'};
   border: 0.5px solid ${theme.palette.mode === 'dark' ? grey[700] : grey[200]};
@@ -148,7 +157,7 @@ const StyledAutocompleteRoot = styled('div')(
         };
   display: flex;
   gap: 5px;
-  padding: 4px;
+  padding: 3px;
   overflow: hidden;
 @media (min-width: 1023px) {
   min-width: 450px;
@@ -185,15 +194,14 @@ const StyledAutocompleteRoot = styled('div')(
 const StyledInput = styled('input')(
     ({ theme }) => `
   font-size: 0.875rem;
-  text-indent: 5px;
-  font-family: inherit;
+  font-family: 'Nexa', sans-serif;
   font-weight: 400;
   line-height: 1.5;
   color: ${theme.palette.mode === 'dark' ? grey[300] : grey[900]};
   background: inherit;
   border: none;
-  border-radius: inherit;
-  padding: 8px 12px;
+  border-radius: none;
+  padding: 8px 8px;
   outline: 0;
   flex: 1 0 auto;
   
@@ -256,6 +264,7 @@ const StyledListbox = styled('ul')(
         };
   `,
 );
+
 
 const StyledOption = styled('li')(
     ({ theme }) => `
@@ -332,5 +341,6 @@ const StyledNoOptions = styled('li')`
 
 const quizzes = entertainment.map(item => ({
     label: item.title,
-    logo: item.logo
+    logo: item.logo,
+    img: item.img
 }));
