@@ -9,15 +9,6 @@ body {
   background-color: #ffffff;
 }
 
-#brand {
-  text-decoration: underline;
-  text-decoration-color: #00c8ff7e;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: #2e2e2e;
-}
-
-
 #home {
   display: grid;
   grid-template-areas: 'nav'
