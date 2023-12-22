@@ -42,6 +42,7 @@ function QuizTemplate() {
     const [isIncorrect, setIsIncorrect] = useState(false);
     const [questionArray, setQuestionArray] = useState([]);
     const loaderData = useLoaderData();
+    console.log(loaderData)
     const question = useLoaderData()[count].question
 
     const path = window.location.search;

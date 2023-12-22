@@ -149,7 +149,7 @@ const StyledAutocompleteRoot = styled('div')(
   ({ theme }) => `
     font-family: 'Inter', sans-serif;
   font-weight: 400;
-  border-radius: 12px;
+  border-radius: 10px;
   color: ${theme.palette.mode === 'dark' ? cyan[300] : cyan[500]};
   background: ${theme.palette.mode === 'dark' ? cyan[900] : '#fff'};
   border: 0.5px solid ${theme.palette.mode === 'dark' ? grey[700] : grey[200]};
