@@ -1,14 +1,11 @@
 import * as React from 'react';
 import Box from '@mui/joy/Box';
-import IconButton from '@mui/joy/IconButton';
 import Divider from '@mui/joy/Divider';
 import List from '@mui/joy/List';
 import ListSubheader from '@mui/joy/ListSubheader';
 import ListItem from '@mui/joy/ListItem';
 import ListItemButton from '@mui/joy/ListItemButton';
 import Sheet from '@mui/joy/Sheet';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 export default function ColorInversionFooter() {
     return (
@@ -21,17 +18,6 @@ export default function ColorInversionFooter() {
                 height: '100%',
             }}
         >
-
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-
-                <IconButton variant="plain" color='neutral'>
-                    <a id='link' href='https://github.com/Kornae'><GitHubIcon /></a>
-                </IconButton>
-                <IconButton variant="plain" color='neutral'>
-                    <a id='link' href='https://www.linkedin.com/in/kornae-m-a69a3b125/'> <LinkedInIcon /></a>
-                </IconButton>
-
-            </Box>
             <Divider sx={{ my: 2 }} />
 
             <div className='container' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>

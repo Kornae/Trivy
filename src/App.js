@@ -5,6 +5,7 @@ import { createBrowserRouter, createRoutesFromElements, Route, Link, Outlet, Rou
 import 'bootstrap/dist/css/bootstrap.min.css';
 import QuizLayout from './components/QuizLayout';
 import { dataLoader } from './components/QuizTemplate';
+import About from './pages/About';
 
 function App() {
   const router = createBrowserRouter(
@@ -12,6 +13,7 @@ function App() {
       <Route path="/" element={<Root />}>
         <Route index element={<Home />} />
         <Route path="/explore" element={<QuizLayout />} loader={dataLoader} />
+        <Route path="/about" element={<About />} />
 
       </Route>
     )
@@ -28,6 +30,7 @@ const Root = () => {
     <div>
       <Link to='/'> </Link>
       <Link to='/explore'></Link>
+      <Link to='/about'></Link>
     </div>
 
     <div>

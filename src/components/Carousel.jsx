@@ -10,6 +10,11 @@ import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import GradientCover from './Card';
 
 const Carousel = () => {
+
+let mouseEnter = () => {
+
+}
+
     const settings = {
         infinite: true,
         useTransform: true,
@@ -17,16 +22,18 @@ const Carousel = () => {
         autoplay: false,
         focusOnSelect: true,
         autoplaySpeed: 4000,
-        slidesToShow: 6,
+        slidesToShow: 3,
         slidesToScroll: 1,
-        prevArrow: <button id='btn' className='slick-prev' type="button"><KeyboardArrowLeftIcon sx={{ color: '#616160' }} /></button>,
-        nextArrow: <button id='btn' className='slick-next' type="button"><NavigateNextIcon sx={{ color: '#616160' }} /></button>,
+        centerMode: true, // Add this property
+        centerPadding: '100px',
+        prevArrow: <button id='btn' className='slick-prev btns' type="button"><KeyboardArrowLeftIcon sx={{ color: '#616160' }} /></button>,
+        nextArrow: <button id='btn' className='slick-next btns' type="button"><NavigateNextIcon sx={{ color: '#616160' }} /></button>,
         dots: false,
         responsive: [
             {
                 breakpoint: 1400,
                 settings: {
-                    slidesToShow: 4,
+                    slidesToShow: 3,
                     slidesToScroll: 1,
                     dots: false,
                 },
@@ -34,7 +41,7 @@ const Carousel = () => {
             {
                 breakpoint: 1024,
                 settings: {
-                    slidesToShow: 4,
+                    slidesToShow: 2,
                     slidesToScroll: 1,
                     dots: false,
                 },
@@ -42,9 +49,19 @@ const Carousel = () => {
             {
                 breakpoint: 768,
                 settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    dots: false,
+                    centerPadding: '50px',
+                },
+            },
+            {
+                breakpoint: 530,
+                settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     dots: false,
+                    centerPadding: '50px',
                 },
             },
         ],
@@ -79,6 +96,7 @@ const Carousel = () => {
                         return (
 
                             <ImageButton
+                            onMouseEnter={mouseEnter}
                                 focusRipple
                                 key={image.title}
                             >

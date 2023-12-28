@@ -23,7 +23,7 @@ const entertainment = [
         id: 6,
         title: 'General Knowledge',
         alt: 'General%20Knowledge',
-        img: 'https://images.unsplash.com/photo-1502119095323-253837f293f9?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE3fHx8ZW58MHx8fHx8',
+        img: 'https://images.unsplash.com/photo-1649932543242-d0a05e1ff135?q=80&w=2864&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         api: 'https://raw.githubusercontent.com/Kornae/quiz-api/main/general.json',
         category: 'Misc',
         logo: <SchoolIcon fontSize='small' />
@@ -32,38 +32,21 @@ const entertainment = [
     {
         id: 2,
         title: 'Animals',
-        img: 'https://images.unsplash.com/photo-1538127426967-75a6c73f6d20?q=80&w=2667&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        img: 'https://images.unsplash.com/photo-1568785629399-0cd9324febdf?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njh8fHNlYSUyMHR1cnRsZXxlbnwwfHwwfHx8MA%3D%3D',
         api: 'https://raw.githubusercontent.com/Kornae/quiz-api/main/animals.json',
         category: 'Educational',
         logo: <PetsIcon fontSize='small' />
-    }, {
-        id: 1,
-        title: 'Sports',
-        img: 'https://images.unsplash.com/photo-1542144582-1ba00456b5e3?q=80&w=2094&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        api: 'https://raw.githubusercontent.com/Kornae/quiz-api/main/sports.json',
-        category: 'Entertainment',
-        logo: <SportsSoccerIcon fontSize='small' />
-    },
+    }, 
     {
-        id: 5,
-        title: 'Gaming',
-        img: 'https://images.unsplash.com/photo-1674146870498-35309b29c102?q=80&w=3027&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        api: 'https://raw.githubusercontent.com/Kornae/quiz-api/main/gaming.json',
-        category: 'Entertainment',
-        logo: <SportsEsportsIcon fontSize='small' />,
-    },
-
-
-
-    {
-        id: 13,
-        title: 'American History',
-        alt: 'American%20History',
-        img: 'https://images.unsplash.com/photo-1616649003731-94787d8c5bc0?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEzfHx8ZW58MHx8fHx8',
-        api: 'https://raw.githubusercontent.com/Kornae/quiz-api/main/history.json',
+        id: 11,
+        title: 'Math',
+        alt: 'Advanced%20Math',
+        img: 'https://images.unsplash.com/photo-1522932753915-9ee97e43e3d9?auto=format&fit=crop&q=80&w=2597&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        api: 'https://raw.githubusercontent.com/Kornae/quiz-api/main/math.json',
         category: 'Educational',
-        logo: <PublicIcon fontSize='small' />
+        logo: <FunctionsIcon fontSize='small' />
     },
+
 
     {
         id: 9,
@@ -73,6 +56,15 @@ const entertainment = [
         api: 'https://raw.githubusercontent.com/Kornae/quiz-api/main/politics.json',
         category: 'Misc',
         logo: <GavelIcon fontSize='small' />
+    },
+
+    {
+        id: 5,
+        title: 'Gaming',
+        img: 'https://images.unsplash.com/photo-1674146870498-35309b29c102?q=80&w=3027&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        api: 'https://raw.githubusercontent.com/Kornae/quiz-api/main/gaming.json',
+        category: 'Entertainment',
+        logo: <SportsEsportsIcon fontSize='small' />,
     },
 
 
@@ -148,15 +140,6 @@ const entertainment = [
         logo: <LandscapeIcon fontSize='small' />
     },
     {
-        id: 11,
-        title: 'Math',
-        alt: 'Advanced%20Math',
-        img: 'https://images.unsplash.com/photo-1522932753915-9ee97e43e3d9?auto=format&fit=crop&q=80&w=2597&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        api: 'https://raw.githubusercontent.com/Kornae/quiz-api/main/math.json',
-        category: 'Educational',
-        logo: <FunctionsIcon fontSize='small' />
-    },
-    {
         id: 12,
         title: 'Science',
         img: 'https://images.unsplash.com/photo-1578496479531-32e296d5c6e1?auto=format&fit=crop&q=60&w=800&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fHw%3D',
@@ -187,20 +170,37 @@ const entertainment = [
     {
         id: 17,
         title: 'Mythology',
-        img: 'https://images.unsplash.com/photo-1554464901-78c9215b7e61?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2874&q=80',
+        img: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/store-card-40-iphone-15-202309_FMT_WHH?wid=618&hei=900&fmt=p-jpg&qlt=95&.v=1692719972317',
         api: 'https://raw.githubusercontent.com/Kornae/quiz-api/main/mythology.json',
         category: 'Misc',
         logo: <BoltIcon fontSize='small' />
     },
+    
     {
         id: 18,
         title: 'Celebrities',
-        img: 'https://images.unsplash.com/photo-1653682902573-efb324d7ee9b?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        img: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/store-card-40-macbook-air-202306_FMT_WHH?wid=618&hei=900&fmt=p-jpg&qlt=95&.v=1683844828250',
         api: 'https://raw.githubusercontent.com/Kornae/quiz-api/main/celebrities.json',
         category: 'Entertainment',
         logo: <PeopleOutlineIcon fontSize='small' />
     },
-
+    {
+        id: 1,
+        title: 'Sports',
+        img: 'https://images.unsplash.com/photo-1617939532603-2905b4eeb788?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHx8',
+        api: 'https://raw.githubusercontent.com/Kornae/quiz-api/main/sports.json',
+        category: 'Entertainment',
+        logo: <SportsSoccerIcon fontSize='small' />
+    },
+    {
+        id: 13,
+        title: 'American History',
+        alt: 'American%20History',
+        img: 'https://images.unsplash.com/photo-1616649003731-94787d8c5bc0?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEzfHx8ZW58MHx8fHx8',
+        api: 'https://raw.githubusercontent.com/Kornae/quiz-api/main/history.json',
+        category: 'Educational',
+        logo: <PublicIcon fontSize='small' />
+    },
 ]
 
 export default entertainment;

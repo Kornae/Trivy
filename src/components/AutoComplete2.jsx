@@ -13,167 +13,167 @@ import SearchIcon from '@mui/icons-material/Search';
 import Divider from '@mui/material/Divider';
 
 const Autocomplete = React.forwardRef(function Autocomplete(props, ref) {
-  const {
-    disabled = false,
-    readOnly = false,
-    ...other
-  } = props;
+    const {
+        disabled = false,
+        readOnly = false,
+        ...other
+    } = props;
 
-  const {
-    getRootProps,
-    getInputProps,
-    getPopupIndicatorProps,
-    getListboxProps,
-    getOptionProps,
-    id,
-    popupOpen,
-    focused,
-    anchorEl,
-    setAnchorEl,
-    groupedOptions,
-  } = useAutocomplete({
-    ...props,
-    componentName: 'BaseAutocompleteIntroduction',
-  });
+    const {
+        getRootProps,
+        getInputProps,
+        getPopupIndicatorProps,
+        getListboxProps,
+        getOptionProps,
+        id,
+        popupOpen,
+        focused,
+        anchorEl,
+        setAnchorEl,
+        groupedOptions,
+    } = useAutocomplete({
+        ...props,
+        componentName: 'BaseAutocompleteIntroduction',
+    });
 
-  const rootRef = useForkRef(ref, setAnchorEl);
+    const rootRef = useForkRef(ref, setAnchorEl);
 
-  return (
-    <React.Fragment>
-      <StyledAutocompleteRoot
-        {...getRootProps(other)}
-        ref={rootRef}
-        className={focused ? 'focused' : undefined}
-      >
-        <IconButton sx={{ p: '10px' }} aria-label="menu">
-          <SearchIcon />
-        </IconButton>
-        <Divider orientation="vertical" variant="middle" flexItem />
-        <StyledInput
-          id={id}
-          disabled={disabled}
-          readOnly={readOnly}
-          {...getInputProps()}
-          placeholder='Search…'
-        />
-        <IconButton             {...getPopupIndicatorProps()}
-          sx={{ p: '10px' }} aria-label="menu">
-          <StyledPopupIndicator
-            className={popupOpen ? 'popupOpen' : undefined}
-          >
-            <ArrowDropDownIcon />
-          </StyledPopupIndicator>
-        </IconButton>
+    return (
+        <React.Fragment>
+            <StyledAutocompleteRoot
+                {...getRootProps(other)}
+                ref={rootRef}
+                className={focused ? 'focused' : undefined}
+            >
+                <IconButton sx={{ p: '10px' }} aria-label="menu">
+                    <SearchIcon />
+                </IconButton>
+                <Divider orientation="vertical" variant="middle" flexItem />
+                <StyledInput
+                    id={id}
+                    disabled={disabled}
+                    readOnly={readOnly}
+                    {...getInputProps()}
+                    placeholder='Search…'
+                />
+                <IconButton             {...getPopupIndicatorProps()}
+                    sx={{ p: '10px' }} aria-label="menu">
+                    <StyledPopupIndicator
+                        className={popupOpen ? 'popupOpen' : undefined}
+                    >
+                        <ArrowDropDownIcon />
+                    </StyledPopupIndicator>
+                </IconButton>
 
-      </StyledAutocompleteRoot>
-      {anchorEl ? (
-        <Popper
-          open={popupOpen}
-          anchorEl={anchorEl}
-          slots={{
-            root: StyledPopper,
-          }}
-          modifiers={[
-            { name: 'flip', enabled: false },
-            { name: 'preventOverflow', enabled: false },
-          ]}
-        >
+            </StyledAutocompleteRoot>
+            {anchorEl ? (
+                <Popper
+                    open={popupOpen}
+                    anchorEl={anchorEl}
+                    slots={{
+                        root: StyledPopper,
+                    }}
+                    modifiers={[
+                        { name: 'flip', enabled: false },
+                        { name: 'preventOverflow', enabled: false },
+                    ]}
+                >
 
-          <StyledListbox {...getListboxProps()}>
+                    <StyledListbox {...getListboxProps()}>
 
-            {
-              groupedOptions.sort((a, b) => a.label.localeCompare(b.label)).map((option, index) => {
-                const optionProps = getOptionProps({ option, index });
-                return <a id='link' href={`/explore?${option.label}`} key={option.label}><StyledOption {...optionProps}><div style={{ display: 'flex', justifyContent: 'left', alignItems: 'center', padding: '2px' }}><span style={{ marginRight: '6px' }}><Avatar id='search-img' alt="image" src={option.img} /></span> {option.label}</div></StyledOption></a>;
-              })}
+                        {
+                            groupedOptions.sort((a, b) => a.label.localeCompare(b.label)).map((option, index) => {
+                                const optionProps = getOptionProps({ option, index });
+                                return <a id='link' href={`/explore?${option.label}`} key={option.label}><StyledOption {...optionProps}><div style={{ display: 'flex', justifyContent: 'left', alignItems: 'center', padding: '2px' }}><span style={{ marginRight: '6px' }}><Avatar id='search-img' alt="image" src={option.img} /></span> {option.label}</div></StyledOption></a>;
+                            })}
 
-            {groupedOptions.length === 0 && (
-              <StyledNoOptions>No results</StyledNoOptions>
-            )}
-          </StyledListbox>
-        </Popper>
-      ) : null}
-    </React.Fragment>
-  );
+                        {groupedOptions.length === 0 && (
+                            <StyledNoOptions>No results</StyledNoOptions>
+                        )}
+                    </StyledListbox>
+                </Popper>
+            ) : null}
+        </React.Fragment>
+    );
 });
 
 Autocomplete.propTypes = {
-  /**
-   * If `true`, the input can't be cleared.
-   * @default false
-   */
-  disableClearable: PropTypes.oneOf([false]),
-  /**
-   * If `true`, the component is disabled.
-   * @default false
-   */
-  disabled: PropTypes.bool,
-  /**
-   * If `true`, the component becomes readonly. It is also supported for multiple tags where the tag cannot be deleted.
-   * @default false
-   */
-  readOnly: PropTypes.bool,
+    /**
+     * If `true`, the input can't be cleared.
+     * @default false
+     */
+    disableClearable: PropTypes.oneOf([false]),
+    /**
+     * If `true`, the component is disabled.
+     * @default false
+     */
+    disabled: PropTypes.bool,
+    /**
+     * If `true`, the component becomes readonly. It is also supported for multiple tags where the tag cannot be deleted.
+     * @default false
+     */
+    readOnly: PropTypes.bool,
 };
 
 export default function AutocompleteIntroduction() {
-  return <Autocomplete options={quizzes} />;
+    return <Autocomplete options={quizzes} />;
 }
 
 const cyan = {
-  50: '#E9F8FC',
-  100: '#BDEBF4',
-  200: '#99D8E5',
-  300: '#66BACC',
-  400: '#1F94AD',
-  500: '#0D5463',
-  600: '#094855',
-  700: '#063C47',
-  800: '#043039',
-  900: '#022127',
+    50: '#E9F8FC',
+    100: '#BDEBF4',
+    200: '#99D8E5',
+    300: '#66BACC',
+    400: '#1F94AD',
+    500: '#0D5463',
+    600: '#094855',
+    700: '#063C47',
+    800: '#043039',
+    900: '#022127',
 };
 
 const grey = {
-  50: '#F3F6F9',
-  100: '#E5EAF2',
-  200: '#DAE2ED',
-  300: '#C7D0DD',
-  400: '#B0B8C4',
-  500: '#9DA8B7',
-  600: '#6B7A90',
-  700: '#434D5B',
-  800: '#303740',
-  900: '#1C2025',
+    50: '#F3F6F9',
+    100: '#E5EAF2',
+    200: '#DAE2ED',
+    300: '#C7D0DD',
+    400: '#B0B8C4',
+    500: '#9DA8B7',
+    600: '#6B7A90',
+    700: '#434D5B',
+    800: '#303740',
+    900: '#1C2025',
 };
 
 const StyledAutocompleteRoot = styled('div')(
-  ({ theme }) => `
+    ({ theme }) => `
     font-family: 'Inter', sans-serif;
   font-weight: 400;
-  border-radius: 30px;
+  border-radius: 10px;
   color: ${theme.palette.mode === 'dark' ? cyan[300] : cyan[500]};
   background: ${theme.palette.mode === 'dark' ? cyan[900] : '#fff'};
   border: 0.5px solid ${theme.palette.mode === 'dark' ? grey[700] : grey[200]};
   box-shadow: 0px 2px 4px ${theme.palette.mode === 'dark' ? 'rgba(0,0,0, 0.5)' : 'rgba(0,0,0, 0.05)'
-    };
+        };
   display: flex;
   align-items: center;
   gap: 3px;
   padding: 3px;
   overflow: hidden;
 @media (min-width: 1023px) {
-  min-width: 150px;
+  min-width: 450px;
   }
 
   @media (min-width: 768px) and (max-width: 1023px) {
-  min-width: 100px;
+  min-width: 400px;
   }
 
   @media (min-width: 368px) and (max-width: 767px){
-  min-width: 100px;
+  min-width: 300px;
   }
 
   @media (max-width: 367px) {
-  min-width: 120px;
+  min-width: 220px;
   }
 
   &.focused {
@@ -193,7 +193,7 @@ const StyledAutocompleteRoot = styled('div')(
 );
 
 const StyledInput = styled('input')(
-  ({ theme }) => `
+    ({ theme }) => `
   font-size: 0.875rem;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
@@ -232,7 +232,7 @@ const StyledPopper = styled('div')`
 `;
 
 const StyledListbox = styled('ul')(
-  ({ theme }) => `
+    ({ theme }) => `
     font-family: 'Inter', sans-serif;
   font-size: 0.875rem;
   box-sizing: border-box;
@@ -262,13 +262,13 @@ const StyledListbox = styled('ul')(
   border: 1px solid ${theme.palette.mode === 'dark' ? grey[700] : grey[200]};
   color: ${theme.palette.mode === 'dark' ? cyan[300] : cyan[900]};
   box-shadow: 0px 4px 6px ${theme.palette.mode === 'dark' ? 'rgba(0,0,0, 0.3)' : 'rgba(0,0,0, 0.05)'
-    };
+        };
   `,
 );
 
 
 const StyledOption = styled('li')(
-  ({ theme }) => `
+    ({ theme }) => `
   list-style: none;
   padding: 8px;
   border-radius: 8px;
@@ -306,7 +306,7 @@ const StyledOption = styled('li')(
 );
 
 const StyledPopupIndicator = styled(Button)(
-  ({ theme }) => `
+    ({ theme }) => `
     outline: 0;
     box-shadow: none;
     border: 0;
@@ -341,7 +341,7 @@ const StyledNoOptions = styled('li')`
 `;
 
 const quizzes = entertainment.map(item => ({
-  label: item.title,
-  logo: item.logo,
-  img: item.img
+    label: item.title,
+    logo: item.logo,
+    img: item.img
 }));

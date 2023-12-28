@@ -5,10 +5,16 @@ import AutocompleteIntroduction from "./AutoComplete";
 export default function Section1() {
     return (
         <div id="s1-container">
+
             <div id="box1">
+                <div id="menuBtn">
+                </div>
                 <div id="headings">
-                    <div id="heading-text">
-                        <h1 id="title"><span id="brand">Trivy</span></h1>
+
+                    <div id="heading-text" >
+                        <div id="title-image" style={{padding:'0px', backgroundColor:'#ffffff'}}>
+                            <span id="brand">TRIVY</span>
+                        </div>
                         <p id="av-text">Mind-blowing. Head-turning.</p>
                         <div id="searchBar" style={{ justifyContent: 'center', display: 'flex', alignItems: 'center', padding: '5px' }}>
                             <AutocompleteIntroduction />
