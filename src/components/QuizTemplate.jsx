@@ -249,7 +249,7 @@ function QuizTemplate() {
                             <h6 style={{ padding: '10px', color: '#929494' }} id="quiz-h5"><SportsScoreIcon /> Score: {score}</h6>
                         </div>
                         <div id="h1-div">
-                            <h1 id="quiz-h1" className="quiz-question" style={{ color: '#424242' }}> {decodeURIComponent(question)} </h1>
+                            <h1 id="quiz-h1" className="quiz-question" style={{ color: '#424242' }}>{quest}) {decodeURIComponent(question)} </h1>
                         </div>
                         <div id="question-div">
                         <Button className="answer1" color="neutral" style={buttonStyle1} onClick={handleChoiceSelection} variant="soft" id={decodeURIComponent(questionArray[0])}>{decodeURIComponent(questionArray[0])} </Button>
