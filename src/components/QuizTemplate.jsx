@@ -28,7 +28,7 @@ function QuizTemplate() {
         ]
     })
 
-    const [count, setCount] = useState(10);
+    const [count, setCount] = useState(0);
     const [score, setScore] = useState(0);
     const [quest, setQuest] = useState(1);
     const [quizQuestion, setQuizQuestion] = useState('')
@@ -91,7 +91,7 @@ function QuizTemplate() {
     }
 
       let retry = () => {
-        window.location = window.location
+          window.location.reload();
     }
 
     const totalScore = (score * 10)
