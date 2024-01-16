@@ -28,7 +28,7 @@ function QuizTemplate() {
         ]
     })
 
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(10);
     const [score, setScore] = useState(0);
     const [quest, setQuest] = useState(1);
     const [quizQuestion, setQuizQuestion] = useState('')
@@ -83,15 +83,19 @@ function QuizTemplate() {
             setIsCorrect(false)
             setIsIncorrect(false)
             setIsSelect(false)
-        }, 1200);
+        }, 1000);
     }
 
     let returnHome = () => {
         window.location = '/'
     }
 
+      let retry = () => {
+        window.location = window.location
+    }
+
     const totalScore = (score * 10)
-    let message = totalScore === 100 ? "Bravo! A flawless performance! You're truly a 'Trivy' genius!" : totalScore >= 90 ? "Outstanding! You've mastered 'Trivy' with flying colors!" : totalScore >= 80 ? `Impressive work! Your understanding of ${title} is commendable.` : totalScore >= 70 ? "Well done! Your efforts are paying off, and you're on the right path." : totalScore >= 60 ? "Good effort! Your commitment to learning is evident. Keep it up!" : totalScore >= 50 ? "Making progress! Your dedication is reflected in your improving scores." : "Every attempt counts! Keep going, and you'll see continuous improvement.";
+    let message = totalScore === 100 ? "Perfection!" : totalScore >= 90 ? "Outstanding!" : totalScore >= 80 ? `Impressive!` : totalScore >= 70 ? "Well done!" : totalScore >= 60 ? "Good effort!" : totalScore >= 50 ? "Making progress!" : "Potential for Improvement.";
 
     const baseButtonStyle = {
         margin: '5px',
@@ -152,6 +156,7 @@ function QuizTemplate() {
                 title={title}
                 totalScore={totalScore}
                 returnHome={returnHome}
+                retry={retry}
             />
         )
     }
