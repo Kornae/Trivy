@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react";
 import entertainment from "./Entertainment";
 import { useLoaderData } from "react-router-dom";
-import ProgressBar from "./ProgressBar";
-import Avatar from '@mui/joy/Avatar';
-import { Button } from "@mui/joy";
-import SportsScoreIcon from '@mui/icons-material/SportsScore';
-import ProgressMobileStepper from "./Next";
+import QuizCard from "./QuizCard";
+import PostQuiz from "./PostQuiz";
 
 export const dataLoader = async () => {
     const path = window.location.search;
@@ -30,20 +27,17 @@ function QuizTemplate() {
             null
         ]
     })
-    const buttonDefaultColor = '#fdfdfd';
-    const buttonDefaultTextColor = '#424242';
-    const buttonDefaultBorderColor = "0.1px solid #DAE2ED";
+
     const [count, setCount] = useState(0);
     const [score, setScore] = useState(0);
     const [quest, setQuest] = useState(1);
+    const [quizQuestion, setQuizQuestion] = useState('')
     const [btnValue, setBtnValue] = useState(null);
     const [isSelect, setIsSelect] = useState(false);
     const [isCorrect, setIsCorrect] = useState(false);
     const [isIncorrect, setIsIncorrect] = useState(false);
     const [questionArray, setQuestionArray] = useState([]);
     const loaderData = useLoaderData();
-    console.log(loaderData)
-    const question = useLoaderData()[count].question
 
     const path = window.location.search;
     const index = entertainment.findIndex((item) => item.title === path.slice(1) || item.alt === path.slice(1));
@@ -52,19 +46,23 @@ function QuizTemplate() {
     const image = entertainment[index].img;
 
     useEffect(() => {
+        const questions = loaderData[count].question;
         const shuffledArray = [...loaderData[count].incorrect_answers, loaderData[count].correct_answer].sort(() => Math.random() - 0.5);
         setQuestionArray(shuffledArray);
+        setQuizQuestion(questions);
     }, [count, loaderData]);
 
-    let correctAnswer = decodeURIComponent(useLoaderData()[count].correct_answer)
+    let correctAnswer = decodeURIComponent(useLoaderData()[count].correct_answer);
+    const qA1 = decodeURIComponent(questionArray[0]);
+    const qA2 = decodeURIComponent(questionArray[1]);
+    const qA3 = decodeURIComponent(questionArray[2]);
+    const qA4 = decodeURIComponent(questionArray[3]);
 
-    let handeleClick = (e) => {
-        setQuest(quest + 1)
-        setCount(count + 1)
-        setIsCorrect(false)
-        setIsIncorrect(false)
-        setIsSelect(false)
-    }
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
+            event.preventDefault();
+        }
+    };
 
     let handleChoiceSelection = (e) => {
         setIsSelect(true)
@@ -74,9 +72,18 @@ function QuizTemplate() {
         if (yourAnswer === correctAnswer) {
             setScore(score + 1)
             setIsCorrect(true)
+
         } else {
             setIsIncorrect(true)
         }
+
+        setTimeout(function () {
+            setQuest(quest + 1)
+            setCount(count + 1)
+            setIsCorrect(false)
+            setIsIncorrect(false)
+            setIsSelect(false)
+        }, 1200);
     }
 
     let returnHome = () => {
@@ -84,216 +91,68 @@ function QuizTemplate() {
     }
 
     const totalScore = (score * 10)
-    let message = '';
+    let message = totalScore === 100 ? "Bravo! A flawless performance! You're truly a 'Trivy' genius!" : totalScore >= 90 ? "Outstanding! You've mastered 'Trivy' with flying colors!" : totalScore >= 80 ? `Impressive work! Your understanding of ${title} is commendable.` : totalScore >= 70 ? "Well done! Your efforts are paying off, and you're on the right path." : totalScore >= 60 ? "Good effort! Your commitment to learning is evident. Keep it up!" : totalScore >= 50 ? "Making progress! Your dedication is reflected in your improving scores." : "Every attempt counts! Keep going, and you'll see continuous improvement.";
 
-    if (totalScore === 100) {
-        message = "Congratulations! You achieved a perfect score! You're a 'Trivy' genius!";
-    }
-    else if (totalScore >= 90) {
-        message = "Wow, impressive! You're a 'Trivy' master!";
-    } else if (totalScore >= 80) {
-        message = `Great job! You have a solid understanding of ${title}.`;
-    } else if (totalScore >= 70) {
-        message = "Well done! You're on the right track.";
-    } else if (totalScore >= 60) {
-        message = "Good effort! Keep learning and practicing.";
-    } else if (totalScore >= 50) {
-        message = "Not bad! You're making progress.";
-    } else {
-        message = "Keep going! Every attempt counts.";
-    }
-
-    const buttonStyle1 = {
+    const baseButtonStyle = {
         margin: '5px',
         padding: '30px',
         fontSize: '1.1em',
         fontWeight: '500',
         borderRadius: '0px',
         pointerEvents: isSelect ? 'none' : 'auto',
-        border: btnValue === decodeURIComponent(questionArray[0])
-            ? isIncorrect
-                ? '0.1px solid #d3302f'
-                : isCorrect
-                    ? '0.1px solid #39833b'
-                    : null
-            : buttonDefaultBorderColor,
-        backgroundColor:
-            btnValue === decodeURIComponent(questionArray[0])
-                ? isIncorrect
-                    ? '#f4eff1'
-                    : isCorrect
-                        ? '#edf2f1'
-                        : null
-                : buttonDefaultColor,
-        color:
-            btnValue === decodeURIComponent(questionArray[0])
-                ? isIncorrect
-                    ? '#d3302f'
-                    : isCorrect
-                        ? '#39833b'
-                        : null
-                : buttonDefaultTextColor,
+        fontFamily: 'Montserrat',
+    };
 
-        fontFamily: 'Montserrat'
+    const buttonStyle1 = {
+        ...baseButtonStyle
     };
 
     const buttonStyle2 = {
-        margin: '5px',
-        padding: '30px',
-        fontSize: '1.1em',
-        fontWeight: '500',
-        borderRadius: '0px',
-        pointerEvents: isSelect ? 'none' : 'auto',
-         border: btnValue === decodeURIComponent(questionArray[1])
-            ? isIncorrect
-                ? '0.1px solid #d3302f'
-                : isCorrect
-                    ? '0.1px solid #39833b'
-                    : null
-            : buttonDefaultBorderColor,
-        backgroundColor:
-            btnValue === decodeURIComponent(questionArray[1])
-                ? isIncorrect
-                    ? '#f4eff1'
-                    : isCorrect
-                        ? '#edf2f1'
-                        : null
-                : buttonDefaultColor,
-        color:
-            btnValue === decodeURIComponent(questionArray[1])
-                ? isIncorrect
-                    ? '#d3302f'
-                    : isCorrect
-                        ? '#39833b'
-                        : null
-                : buttonDefaultTextColor,
-        fontFamily: 'Montserrat'
+        ...baseButtonStyle
     };
 
     const buttonStyle3 = {
-        margin: '5px',
-        padding: '30px',
-        fontSize: '1.1em',
-        fontWeight: '500',
-        borderRadius: '0px',
-        pointerEvents: isSelect ? 'none' : 'auto',
-         border: btnValue === decodeURIComponent(questionArray[2])
-            ? isIncorrect
-                ? '0.1px solid #d3302f'
-                : isCorrect
-                    ? '0.1px solid #39833b'
-                    : null
-            : buttonDefaultBorderColor,
-        backgroundColor:
-            btnValue === decodeURIComponent(questionArray[2])
-                ? isIncorrect
-                    ? '#f4eff1'
-                    : isCorrect
-                        ? '#edf2f1'
-                        : null
-                : buttonDefaultColor,
-
-        color:
-            btnValue === decodeURIComponent(questionArray[2])
-                ? isIncorrect
-                    ? '#d3302f'
-                    : isCorrect
-                        ? '#39833b'
-                        : null
-                : buttonDefaultTextColor,
-        fontFamily: 'Montserrat'
+        ...baseButtonStyle
     };
 
     const buttonStyle4 = {
-        margin: '5px',
-        padding: '30px',
-        fontSize: '1.1em',
-        fontWeight: '500',
-        borderRadius: '0px',
-        pointerEvents: isSelect ? 'none' : 'auto',
-         border: btnValue === decodeURIComponent(questionArray[3])
-            ? isIncorrect
-                ? '0.1px solid #d3302f'
-                : isCorrect
-                    ? '0.1px solid #39833b'
-                    : null
-            : buttonDefaultBorderColor,
-        backgroundColor:
-            btnValue === decodeURIComponent(questionArray[3])
-                ? isIncorrect
-                    ? '#f4eff1'
-                    : isCorrect
-                        ? '#edf2f1'
-                        : null
-                : buttonDefaultColor,
-        color:
-            btnValue === decodeURIComponent(questionArray[3])
-                ? isIncorrect
-                    ? '#d3302f'
-                    : isCorrect
-                        ? '#39833b'
-                        : null
-                : buttonDefaultTextColor,
-        fontFamily: 'Montserrat'
+        ...baseButtonStyle
     };
 
     if (count < 10) {
-
         return (
-            <div id="quiz-box" style={{ height: '100%' }}>
-                <div id="main-content" className="container">
-                    <div id="questions" className="main-heading-div">
-                        <div id="logo-div">
-                            <div id="avatar-group" style={{ padding: '15px' }}> <Avatar id="avatar-logo" size="lg" variant="solid" src={image} /></div>
-                            <h4 id="quiz-h5">{title}</h4>
-                            <h6 style={{ padding: '10px', color: '#929494' }} id="quiz-h5"><SportsScoreIcon /> Score: {score}</h6>
-                        </div>
-                        <div id="h1-div">
-                            <h1 id="quiz-h1" className="quiz-question" style={{ color: '#424242' }}>{quest}) {decodeURIComponent(question)} </h1>
-                        </div>
-                        <div id="question-div">
-                        <Button className="answer1" color="neutral" style={buttonStyle1} onClick={handleChoiceSelection} variant="soft" id={decodeURIComponent(questionArray[0])}>{decodeURIComponent(questionArray[0])} </Button>
-                        <Button className="answer2" color="neutral" style={buttonStyle2} onClick={handleChoiceSelection} variant="soft" id={decodeURIComponent(questionArray[1])}>{decodeURIComponent(questionArray[1])} </Button>
-                        <Button className="answer3" color="neutral" style={buttonStyle3} onClick={handleChoiceSelection} variant="soft" id={decodeURIComponent(questionArray[2])}>{decodeURIComponent(questionArray[2])} </Button>
-                        <Button className="answer4" color="neutral" style={buttonStyle4} onClick={handleChoiceSelection} variant="soft" id={decodeURIComponent(questionArray[3])}>{decodeURIComponent(questionArray[3])} </Button>
-                        </div>
-                        <div id="next-button" style={{ padding: '10px' }}>
-                            {isSelect ? (<ProgressMobileStepper handleNext={handeleClick} />) : null}
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+            <QuizCard
+                buttonStyle1={buttonStyle1}
+                buttonStyle2={buttonStyle2}
+                buttonStyle3={buttonStyle3}
+                buttonStyle4={buttonStyle4}
+                btnValue={btnValue}
+                correctAnswer={correctAnswer}
+                count={count}
+                handleChoiceSelection={handleChoiceSelection}
+                handleKeyDown={handleKeyDown}
+                image={image}
+                isCorrect={isCorrect}
+                isIncorrect={isIncorrect}
+                isSelect={isSelect}
+                qA1={qA1}
+                qA2={qA2}
+                qA3={qA3}
+                qA4={qA4}
+                quizQuestion={quizQuestion}
+                title={title}
+            />
         )
     }
     else {
         return (
-            <div id="quiz-box" className="card">
-                <div id="main-content" className="container">
-                    <div id="results" className="main-heading-div">
-
-                        <div id="logo-div">
-
-                            <div id="avatar-group" style={{ padding: '15px' }}> <Avatar variant="solid" src={image} /></div>
-
-
-                            <h3 id="quiz-h5">{title}</h3>
-
-                            <div id="progress">
-                                <ProgressBar value={totalScore} max={100} width={'25rem'} className="custom-progress-bar" />
-                                <span id="total" style={{ fontSize: '4rem' }}> {totalScore} </span>
-
-                            </div>
-
-                            <h3 style={{ padding: '20px', color: '#424242' }} className="message" id="quiz-h5">{message}</h3>
-                            <Button id="doneBtn" onClick={returnHome} style={{ padding: '20px', width: '50%', fontWeight: '300', borderRadius: '10px' }} variant="soft" color="neutral">Done</Button>
-                        </div>
-
-
-                    </div>
-
-                </div>
-            </div>
+            <PostQuiz
+                image={image}
+                message={message}
+                title={title}
+                totalScore={totalScore}
+                returnHome={returnHome}
+            />
         )
     }
 }
