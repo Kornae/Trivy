@@ -4,7 +4,7 @@ import Divider from '@mui/joy/Divider';
 import List from '@mui/joy/List';
 import ListSubheader from '@mui/joy/ListSubheader';
 import ListItem from '@mui/joy/ListItem';
-import ListItemButton from '@mui/joy/ListItemButton';
+// import ListItemButton from '@mui/joy/ListItemButton';
 import Sheet from '@mui/joy/Sheet';
 
 export default function ColorInversionFooter() {
@@ -36,11 +36,11 @@ export default function ColorInversionFooter() {
                         size="sm"
                         orientation="horizontal"
                         wrap
-                        sx={{ flexGrow: 0, '--ListItem-radius': '8px' }}
+                        sx={{ flexGrow: 0, '--ListItem-radius': '8px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
                     >
                         <ListItem nested sx={{ width: { xs: '50%', md: 140 } }}>
-                            <ListSubheader sx={{ fontFamily: 'Montserrat'}}>Topics</ListSubheader>
-                            <List>
+                            <ListSubheader sx={{ fontFamily: 'Montserrat', textAlign:'center', display:'flex', justifyContent:'center', alignItems:'center'}}>©2024 Trivy</ListSubheader>
+                            {/* <List>
                                 <ListItem sx={{ fontFamily: 'Montserrat' }}>
                                     Educational
                                 </ListItem>
@@ -50,9 +50,9 @@ export default function ColorInversionFooter() {
                                 <ListItem sx={{ fontFamily: 'Montserrat' }}>
                                     Misc
                                 </ListItem>
-                            </List>
+                            </List> */}
                         </ListItem>
-                        <ListItem nested sx={{ width: { xs: '50%', md: 180 } }}>
+                        {/* <ListItem nested sx={{ width: { xs: '50%', md: 180 } }}>
                             <ListSubheader sx={{ textAlign: 'left', fontFamily: 'Montserrat' }}>Other Projects</ListSubheader>
                             <List sx={{ '--ListItemDecorator-size': '32px' }}>
                                 <ListItem>
@@ -80,7 +80,7 @@ export default function ColorInversionFooter() {
                                     </ListItemButton>
                                 </ListItem>
                             </List>
-                        </ListItem>
+                        </ListItem> */}
                     </List>
                 </Box>
             </div>

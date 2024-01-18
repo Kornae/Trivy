@@ -38,6 +38,7 @@ function QuizTemplate() {
     const [isIncorrect, setIsIncorrect] = useState(false);
     const [questionArray, setQuestionArray] = useState([]);
     const loaderData = useLoaderData();
+    const [myArray, setMyArray] = useState([]);
 
     const path = window.location.search;
     const index = entertainment.findIndex((item) => item.title === path.slice(1) || item.alt === path.slice(1));
@@ -63,7 +64,6 @@ function QuizTemplate() {
             event.preventDefault();
         }
     };
-
     let handleChoiceSelection = (e) => {
         setIsSelect(true)
         let yourAnswer = e.target.id;
@@ -75,6 +75,9 @@ function QuizTemplate() {
 
         } else {
             setIsIncorrect(true)
+                if (quizQuestion && quizQuestion.trim() !== "") {
+                    setMyArray(prevArray => [...prevArray, decodeURIComponent(quizQuestion)]);
+                }
         }
 
         setTimeout(function () {
@@ -85,13 +88,16 @@ function QuizTemplate() {
             setIsSelect(false)
         }, 1000);
     }
+  
+  console.log(myArray);
+
 
     let returnHome = () => {
         window.location = '/'
     }
 
-      let retry = () => {
-          window.location.reload();
+    let retry = () => {
+        window.location.reload();
     }
 
     const totalScore = (score * 10)
@@ -150,14 +156,21 @@ function QuizTemplate() {
     }
     else {
         return (
-            <PostQuiz
-                image={image}
-                message={message}
-                title={title}
-                totalScore={totalScore}
-                returnHome={returnHome}
-                retry={retry}
-            />
+            <div>
+                <PostQuiz
+                    image={image}
+                    message={message}
+                    title={title}
+                    totalScore={totalScore}
+                    returnHome={returnHome}
+                    retry={retry}
+                    questions={myArray}
+                    correct={score}
+                    incorrect={count-score}
+                    totalQuestions={count}
+                />
+            </div>
+
         )
     }
 }

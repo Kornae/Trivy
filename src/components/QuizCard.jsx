@@ -10,7 +10,6 @@ export default function QuizCard(props) {
                     <div id="logo-div">
                         <h4 id="quiz-h5">{props.title}</h4>
                         <div id="avatar-group" style={{ padding: '15px' }}> <Avatar id="avatar-logo" size="lg" variant="solid" src={props.image} /> <CircularDeterminate progress={props.count * 10} /></div>
-                     
                     </div>
                     <div id="h1-div">
                         <h1 id="quiz-h1" className="quiz-question" style={{ color: '#424242' }}>{decodeURIComponent(props.quizQuestion)} </h1>

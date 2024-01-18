@@ -30,7 +30,7 @@ const ProgressBar = ({ value, max, width = '100%', className = "" }) => {
     path2.setAttribute("fill", "none");
     path2.setAttribute("stroke-linecap", "round");
     path2.setAttribute("stroke-width", "6");
-    path2.setAttribute("stroke", "#abdbe3");
+    path2.setAttribute("stroke", "#7ec0cc");
     path2.setAttribute("stroke-dasharray", SVG_DASHARRAY_MAX);
     path2.setAttribute("stroke-dashoffset", SVG_DASHARRAY_MAX);
     path2.style.animation = "progress 1s ease-out forwards";
