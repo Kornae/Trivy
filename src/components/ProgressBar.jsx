@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from "react";
 const ProgressBar = ({ value, max, width = '100%', className = "" }) => {
   const svgRef = useRef(null);
 
-  useEffect(() => {
+  useEffect((props) => {
     const SVG_DASHARRAY_MAX = 126;
     const dashOffset = Math.round((value * SVG_DASHARRAY_MAX) / max);
 

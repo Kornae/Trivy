@@ -86,8 +86,8 @@ body {
     'mbtn mbtn mbtn';
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
-  padding: 50px;
-  margin: 15px;
+  padding: 60px;
+  margin: 5px 15px;
   box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
   color: #424242;
 }
@@ -134,8 +134,8 @@ body {
   text-shadow: 0px 15px 5px rgba(0, 0, 0, 0.05),
     10px 20px 5px rgba(0, 0, 0, 0.02),
     -10px 20px 5px rgba(0, 0, 0, 0.0);
-  letter-spacing: 10px;
-  text-indent: 10px;
+  letter-spacing: 5px;
+  text-indent: 5px;
 }
 
 #title {
@@ -211,7 +211,6 @@ body {
   grid-area: showcase;
   box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
   background-color: transparent;
-  padding: 5px 0px;
   border-radius: 15px;
 }
 
@@ -488,10 +487,10 @@ body {
 
 @media (min-width: 1023px) {
 
-  .a1:hover,
-  .a2:hover,
-  .a3:hover,
-  .a4:hover {
+  .a1:active,
+  .a2:active,
+  .a3:active,
+  .a4:active {
     background-color: #eaedf184 !important;
   }
 }

@@ -27,24 +27,21 @@ function QuizTemplate() {
             null
         ]
     })
-
+    const loaderData = useLoaderData();
     const [count, setCount] = useState(0);
     const [score, setScore] = useState(0);
-    const [quest, setQuest] = useState(1);
     const [quizQuestion, setQuizQuestion] = useState('')
     const [btnValue, setBtnValue] = useState(null);
     const [isSelect, setIsSelect] = useState(false);
     const [isCorrect, setIsCorrect] = useState(false);
     const [isIncorrect, setIsIncorrect] = useState(false);
     const [questionArray, setQuestionArray] = useState([]);
-    const loaderData = useLoaderData();
-    const [myArray, setMyArray] = useState([]);
 
     const path = window.location.search;
     const index = entertainment.findIndex((item) => item.title === path.slice(1) || item.alt === path.slice(1));
-
     let title = entertainment[index].title;
     const image = entertainment[index].img;
+    const category = entertainment[index].category;
 
     useEffect(() => {
         const questions = loaderData[count].question;
@@ -75,21 +72,15 @@ function QuizTemplate() {
 
         } else {
             setIsIncorrect(true)
-                if (quizQuestion && quizQuestion.trim() !== "") {
-                    setMyArray(prevArray => [...prevArray, decodeURIComponent(quizQuestion)]);
-                }
         }
 
         setTimeout(function () {
-            setQuest(quest + 1)
             setCount(count + 1)
             setIsCorrect(false)
             setIsIncorrect(false)
             setIsSelect(false)
         }, 1000);
     }
-  
-  console.log(myArray);
 
 
     let returnHome = () => {
@@ -137,6 +128,7 @@ function QuizTemplate() {
                 buttonStyle3={buttonStyle3}
                 buttonStyle4={buttonStyle4}
                 btnValue={btnValue}
+                category={category}
                 correctAnswer={correctAnswer}
                 count={count}
                 handleChoiceSelection={handleChoiceSelection}
@@ -158,15 +150,15 @@ function QuizTemplate() {
         return (
             <div>
                 <PostQuiz
+                    category={category}
                     image={image}
                     message={message}
                     title={title}
                     totalScore={totalScore}
                     returnHome={returnHome}
                     retry={retry}
-                    questions={myArray}
                     correct={score}
-                    incorrect={count-score}
+                    incorrect={count - score}
                     totalQuestions={count}
                 />
             </div>

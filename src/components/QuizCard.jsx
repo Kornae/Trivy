@@ -3,13 +3,14 @@ import Avatar from '@mui/joy/Avatar';
 import CircularDeterminate from "./Circle";
 
 export default function QuizCard(props) {
-    return(
+    return (
         <div id="quiz-box" style={{ height: '100%' }}>
             <div id="main-content" className="container">
                 <div id="questions" className="main-heading-div">
                     <div id="logo-div">
-                        <h4 id="quiz-h5">{props.title}</h4>
                         <div id="avatar-group" style={{ padding: '15px' }}> <Avatar id="avatar-logo" size="lg" variant="solid" src={props.image} /> <CircularDeterminate progress={props.count * 10} /></div>
+                        <h3 id="quiz-h5" style={{ paddingTop: '15px' }}>{props.title}</h3>
+                        <h6 id="quiz-h5">{props.category}</h6>
                     </div>
                     <div id="h1-div">
                         <h1 id="quiz-h1" className="quiz-question" style={{ color: '#424242' }}>{decodeURIComponent(props.quizQuestion)} </h1>
