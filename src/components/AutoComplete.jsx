@@ -183,7 +183,7 @@ const StyledAutocompleteRoot = styled('div')(
   }
 
   &:hover {
-    background: ${theme.palette.mode === 'dark' ? grey[800] : grey[50]};
+    background: #f4f4f480;
     border-color: ${theme.palette.mode === 'dark' ? grey[600] : grey[300]};
   }
 
