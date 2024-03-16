@@ -25,7 +25,7 @@ const Carousel = (props) => {
         infinite: true,
         useTransform: true,
         swipe: true,
-        autoplay: true,
+        autoplay: false,
         focusOnSelect: true,
         autoplaySpeed: 3600,
         slidesToShow: 2,
