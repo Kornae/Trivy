@@ -1,5 +1,6 @@
 @import url('https://fonts.cdnfonts.com/css/nexa');
 @import url('https://fonts.cdnfonts.com/css/montserrat');
+@import url('https://fonts.cdnfonts.com/css/sf-ui-text-2');
 
 
 
@@ -29,6 +30,8 @@ body {
 
 #nav {
   grid-area: nav;
+  width: 100%;
+  background-color: #f4f4f4dc !important;
 }
 
 #navbar {
@@ -39,7 +42,6 @@ body {
 #fab {
   font-family: 'Montserrat', sans-serif !important;
   font-weight: 400;
-
 }
 
 #logo {
@@ -62,6 +64,10 @@ body {
   box-shadow: none !important;
 }
 
+.css-ov8ytu-JoyDrawer-content {display: flex;
+  justify-content: center;
+  align-items: center;}
+
 #s1 {
   grid-area: s1;
 }
@@ -72,28 +78,24 @@ body {
     'showcase showcase showcase showcase';
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto auto;
-  gap: 1rem;
+  gap: 0rem;
+  background-color: #f4f4f4ef;
 }
-
 
 #box1 {
   grid-area: box1;
-  background-color: #efefef;
+  background-color: #f4f4f4ef;
   border-radius: 10px;
   display: grid;
   grid-template-areas:
-    'headings headings headings'
-    'mbtn mbtn mbtn';
+    'headings headings headings';
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
   padding: 60px;
-  margin: 5px 15px;
+  margin: 5px 0px 0px;
   box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
   color: #424242;
-}
-
-#menuBtn {
-  grid-area: mbtn;
+  border-radius: 0px;
 }
 
 #menu {
@@ -128,14 +130,14 @@ body {
 }
 
 #brand {
-  font-size: 8rem;
-  color: #2f2f2f;
+  font-size: 9.5rem;
+  color: #2e2e2e;
   font-weight: 600;
   text-shadow: 0px 15px 5px rgba(0, 0, 0, 0.05),
     10px 20px 5px rgba(0, 0, 0, 0.02),
     -10px 20px 5px rgba(0, 0, 0, 0.0);
-  letter-spacing: 5px;
-  text-indent: 5px;
+  letter-spacing: 0px;
+  text-indent: 0px;
 }
 
 #title {
@@ -196,7 +198,6 @@ body {
 
 #circle {
   position: absolute;
-  /* top: 40%; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -215,29 +216,34 @@ body {
 }
 
 #btn {
-  background-color: #ffffff;
+  background-color: #ffffffe9;
   margin: .5px;
   border-radius: 50%;
-  width: 50px !important;
-  height: 50px !important;
+  width: 35px !important;
+  height: 35px !important;
   z-index: 1;
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 
 #cards {
-  border-radius: 10px;
-  height: 400px;
+  border-radius: 0px;
+  height: 35vh;
+  border: none;
+  margin: 0;
 }
 
-
+.slick-dots {
+  position: static;
+}
 
 .slick-prev {
-  left: -15px !important;
+  left: -8px !important;
   overflow: hidden !important;
+
 }
 
 .slick-next {
-  right: -15px !important;
+  right: -8px !important;
   overflow: hidden !important;
 }
 
@@ -324,10 +330,9 @@ body {
 
 /*Question & Answers*/
 #quiz-h1 {
-  color: #2e2e2e;
+  color: #424242;
   padding: 10px;
-  font-family: 'Nexa', sans-serif;
-  font-weight: bold;
+  font-family: 'Montserrat', sans-serif !important;
 }
 
 #quiz-h5 {
@@ -343,7 +348,6 @@ body {
 }
 
 #questions {
-  /* display: grid; */
   color: #2e2e2e;
   padding: 50px 0px;
 }
@@ -358,8 +362,16 @@ body {
   padding: 0px 50px;
 }
 
+.answer1:hover,
+.answer2:hover,
+.answer3:hover,
+.answer4:hover {
+  background-color: #dee3e739;
+  color: #000000bc;
+}
+
 .answerBorder {
-  border: 0.1px solid #DAE2ED !important;
+  border: 0.1px solid #dae2ed98 !important;
 }
 
 .notSelectedAnswer {
@@ -400,6 +412,8 @@ body {
   grid-area: a4;
   border-radius: 5px !important;
 }
+
+
 
 #results {
   color: #2e2e2e;
@@ -470,8 +484,8 @@ body {
     grid-template-areas: 'box1 box1 box1 box1'
       'showcase showcase showcase showcase';
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 2fr auto;
-    gap: 1rem;
+    grid-template-rows: 75vh auto auto;
+    gap: 0rem;
   }
 
   /*Quiz Layout*/
@@ -519,18 +533,18 @@ body {
     text-indent: 5px;
   }
 
- #question-div {
-   border-radius: 20px;
-   width: 100%;
-   display: grid;
-   grid-template-areas: 'a1'
-     'a2'
-     'a3'
-     'a4';
-   grid-template-columns: 1fr;
-   grid-template-rows: 1fr 1fr 1fr 1fr;
-   padding: 0px 20px;
- }
+  #question-div {
+    border-radius: 20px;
+    width: 100%;
+    display: grid;
+    grid-template-areas: 'a1'
+      'a2'
+      'a3'
+      'a4';
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    padding: 0px 20px;
+  }
 
   #subtitle {
     font-size: 1.2rem;
@@ -592,16 +606,19 @@ body {
     padding: 0px 20px;
   }
 
-    #cards {
-      border-radius: 10px;
-      height: 340px;
-    }
+  #cards {
+    border-radius: 0px;
+    height: 35vh;
+      border: none;
+        margin: 0;
+  }
 
   #retryBtn {
-   width:30% !important
+    width: 30% !important
   }
-    #doneBtn {
-   width:30% !important
+
+  #doneBtn {
+    width: 30% !important
   }
 
 }

@@ -14,7 +14,7 @@ export const dataLoader = async () => {
     return quizData.results;
 }
 
-function QuizTemplate() {
+function QuizTemplate(props) {
     useLoaderData().push({
         "category": null,
         "type": null,
@@ -30,6 +30,7 @@ function QuizTemplate() {
     const loaderData = useLoaderData();
     const [count, setCount] = useState(0);
     const [score, setScore] = useState(0);
+    const [missed, setMissed] = useState(0);
     const [quizQuestion, setQuizQuestion] = useState('')
     const [btnValue, setBtnValue] = useState(null);
     const [isSelect, setIsSelect] = useState(false);
@@ -72,6 +73,7 @@ function QuizTemplate() {
 
         } else {
             setIsIncorrect(true)
+            setMissed(missed + 1)
         }
 
         setTimeout(function () {
@@ -81,7 +83,6 @@ function QuizTemplate() {
             setIsSelect(false)
         }, 1000);
     }
-
 
     let returnHome = () => {
         window.location = '/'
@@ -120,7 +121,7 @@ function QuizTemplate() {
         ...baseButtonStyle
     };
 
-    if (count < 10) {
+if (count < 10) {
         return (
             <QuizCard
                 buttonStyle1={buttonStyle1}
@@ -158,7 +159,7 @@ function QuizTemplate() {
                     returnHome={returnHome}
                     retry={retry}
                     correct={score}
-                    incorrect={count - score}
+                    incorrect={missed}
                     totalQuestions={count}
                 />
             </div>

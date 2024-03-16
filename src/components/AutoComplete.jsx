@@ -149,11 +149,12 @@ const StyledAutocompleteRoot = styled('div')(
   ({ theme }) => `
     font-family: 'Inter', sans-serif;
   font-weight: 400;
-  border-radius: 30px;
+  border-radius: 0px;
   color: ${theme.palette.mode === 'dark' ? cyan[300] : cyan[500]};
+  border:none
   background: ${theme.palette.mode === 'dark' ? cyan[900] : '#fff'};
-  border: 0.5px solid ${theme.palette.mode === 'dark' ? grey[700] : grey[200]};
-  box-shadow: 0px 2px 4px ${theme.palette.mode === 'dark' ? 'rgba(0,0,0, 0.5)' : 'rgba(0,0,0, 0.05)'
+  border-bottom: 0.5px solid ${theme.palette.mode === 'dark' ? grey[700] : grey[200]};
+  // box-shadow: 0px 2px 4px ${theme.palette.mode === 'dark' ? 'rgba(0,0,0, 0.5)' : 'rgba(0,0,0, 0.05)'
     };
   display: flex;
   align-items: center;

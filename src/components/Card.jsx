@@ -6,7 +6,7 @@ import Typography from '@mui/joy/Typography';
 
 export default function GradientCover(props) {
     return (
-        <Card id="cards" sx={{ height: '420px', width: 'auto', margin: '0 5px' }}>
+        <Card id="cards" sx={{ height: 'auto', width: 'auto', margin: '0 5px' }}>
             <CardCover >
                 <img
                     id='cards'
@@ -25,13 +25,18 @@ export default function GradientCover(props) {
             />
             <CardContent sx={{ justifyContent: 'flex-end', alignItems: 'flex-start' }}>
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
+
                     <div className='me-auto'>
-                        <Typography sx={{ textAlign: 'left', fontFamily: 'Montserrat' }} level="title-lg" textColor="#fff">
-                            {props.title}
-                        </Typography>
-                        <Typography sx={{ textAlign: 'left', fontFamily: 'Montserrat' }} id='category' level="body-sm">
-                            {props.topic}
-                        </Typography>
+                        <div id='card-text'>
+                            <Typography sx={{ textAlign: 'left', fontFamily: 'Montserrat' }} level="title-md" textColor="#fff">
+                                {props.title}
+                            </Typography>
+                        </div>
+                        <div id='card-text'>
+                            <Typography sx={{ textAlign: 'left', fontFamily: 'Montserrat' }} id='category' level="body-sm">
+                                {props.topic}
+                            </Typography>
+                        </div>
                     </div>
                 </div>
             </CardContent>

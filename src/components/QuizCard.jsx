@@ -13,7 +13,7 @@ export default function QuizCard(props) {
                         <h6 id="quiz-h5">{props.category}</h6>
                     </div>
                     <div id="h1-div">
-                        <h1 id="quiz-h1" className="quiz-question" style={{ color: '#424242' }}>{decodeURIComponent(props.quizQuestion)} </h1>
+                        <h1 id="quiz-h1" className="quiz-question" >{decodeURIComponent(props.quizQuestion)} </h1>
                     </div>
                     <div id="question-div" className="container-fluid">
                         <div className={`answer1 answerBorder ${props.isSelect ? null : `a1`} ${props.btnValue === props.qA1 && props.isIncorrect ? `incorrectAnswer` : null} ${props.btnValue === props.qA1 && props.isCorrect ? `correctAnswer` : null} ${props.btnValue === props.correctAnswer && props.isSelect && !props.isIncorrect && props.isCorrect ? `notSelectedAnswer` : null} ${props.btnValue !== props.correctAnswer && props.isSelect && props.isIncorrect && !props.isCorrect ? `notSelectedAnswer` : null}`} style={props.buttonStyle1} onKeyDown={props.handleKeyDown} onClick={props.handleChoiceSelection} variant="soft" id={props.qA1}>{props.qA1} </div>

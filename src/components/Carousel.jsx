@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -9,35 +9,39 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import GradientCover from './Card';
 
-const Carousel = () => {
+const Carousel = (props) => {
 
-let mouseEnter = () => {
+    const [state, setState] = useState(false)
 
-}
+    function handleClick() {
+        setState(true)
+    }
+
+    if (state === true) {
+
+    }
 
     const settings = {
         infinite: true,
         useTransform: true,
         swipe: true,
-        autoplay: false,
+        autoplay: true,
         focusOnSelect: true,
-        autoplaySpeed: 4000,
-        slidesToShow: 3,
+        autoplaySpeed: 3600,
+        slidesToShow: 2,
         slidesToScroll: 1,
         centerMode: true,
         arrows: true,
-        cssEase: 'ease', 
-        centerPadding: '125px',
+        cssEase: 'ease',
+        centerPadding: '250px',
         prevArrow: <button id='btn' className='slick-prev btns' type="button"><KeyboardArrowLeftIcon sx={{ color: '#616160' }} /></button>,
         nextArrow: <button id='btn' className='slick-next btns' type="button"><NavigateNextIcon sx={{ color: '#616160' }} /></button>,
-        dots: false,
         responsive: [
             {
                 breakpoint: 1400,
                 settings: {
-                    slidesToShow: 3,
+                    slidesToShow: 2,
                     slidesToScroll: 1,
-                    dots: false,
                 },
             },
             {
@@ -45,7 +49,6 @@ let mouseEnter = () => {
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
-                    dots: false,
                 },
             },
             {
@@ -53,7 +56,8 @@ let mouseEnter = () => {
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
-                    dots: false,
+                    autoplay: false,
+                    speed: 0, // Set to 0 for continuous gliding
                     arrows: false,
                     centerPadding: '50px',
                 },
@@ -63,7 +67,8 @@ let mouseEnter = () => {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    dots: false,
+                    autoplay: false,
+                    speed: 0,
                     arrows: false,
                     centerPadding: '50px',
                 },
@@ -100,11 +105,10 @@ let mouseEnter = () => {
                         return (
 
                             <ImageButton
-                            onMouseEnter={mouseEnter}
                                 focusRipple
                                 key={image.title}
                             >
-                                <a id='link' href={`/explore?${image.title}`} key={image.title}>
+                                <a onClick={handleClick} id='link' href={`/explore?${image.title}`} key={image.title}>
                                     <GradientCover
                                         cImg={image.img}
                                         title={image.title}

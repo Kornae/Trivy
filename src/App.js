@@ -7,6 +7,7 @@ import QuizLayout from './components/QuizLayout';
 import { dataLoader } from './components/QuizTemplate';
 
 function App() {
+
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Root />}>
@@ -27,7 +28,7 @@ const Root = () => {
     <div>
       <Link to='/'> </Link>
       <Link to='/explore'></Link>
-      <Link to='/about'></Link>
+      <Link to='/quizzes'></Link>
     </div>
 
     <div>
