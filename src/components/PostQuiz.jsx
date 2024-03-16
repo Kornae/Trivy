@@ -2,11 +2,11 @@ import React from "react";
 import ProgressBar from "./ProgressBar";
 import Avatar from '@mui/joy/Avatar';
 import { Button } from "@mui/material";
-import RestartAltIcon from '@mui/icons-material/RestartAlt';
-import RoofingRoundedIcon from '@mui/icons-material/RoofingRounded';
 import CircularDeterminate from "./Circle";
 import Typography from '@mui/joy/Typography';
 import Sheet from '@mui/joy/Sheet';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import ReplayIcon from '@mui/icons-material/Replay';
 
 export default function PostQuiz(props) {
     return (
@@ -27,7 +27,7 @@ export default function PostQuiz(props) {
                         <h3 style={{ padding: '20px', color: '#424242' }} className="message" id="quiz-h5">{props.message}</h3>
                         <Sheet
                             sx={{
-                                bgcolor: 'background.level1',
+                                bgcolor: '#f9f9f9',
                                 borderRadius: 'md',
                                 p: 2.5,
                                 my: 1.5,
@@ -56,8 +56,8 @@ export default function PostQuiz(props) {
                                 <Typography sx={{ fontFamily: 'Nexa' }} fontWeight="md">{props.incorrect}</Typography>
                             </div>
                         </Sheet>
-                        <Button id="retryBtn" onClick={props.retry} style={{ padding: '20px', width: '15%', fontWeight: '300', borderRadius: '10px', margin: '5px' }} variant="soft" color="neutral"><RestartAltIcon /> <span style={{ padding: '0px 5px' }}>Retry</span></Button>
-                        <Button id="doneBtn" onClick={props.returnHome} style={{ padding: '20px', width: '15%', fontWeight: '300', borderRadius: '10px', margin: '5px' }} variant="soft" color="neutral"><RoofingRoundedIcon /> <span style={{ padding: '0px 5px' }}>Home</span></Button>
+                        <Button id="retryBtn" onClick={props.retry} style={{ padding: '20px', width: '15%', fontWeight: '300', borderRadius: '10px', margin: '5px' }} variant="soft" color="neutral"><ReplayIcon /> <span style={{ padding: '0px 5px' }}>Retry</span></Button>
+                        <Button id="doneBtn" onClick={props.returnHome} style={{ padding: '20px', width: '15%', fontWeight: '300', borderRadius: '10px', margin: '5px' }} variant="soft" color="neutral"> <span style={{ padding: '0px 5px' }}>Return</span> <NavigateNextIcon /></Button>
                     </div>
                 </div>
 

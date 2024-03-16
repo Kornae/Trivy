@@ -8,6 +8,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import XIcon from '@mui/icons-material/X';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import Sheet from '@mui/joy/Sheet';
+import VerifiedIcon from '@mui/icons-material/Verified';
 
 export default function ColorInversionFooter() {
 
@@ -34,6 +35,7 @@ export default function ColorInversionFooter() {
             }}
         >
             <span style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} className="navbar-brand brand" id="logo" href="#"> <span onClick={Instagram} style={{ margin: '0px 3px' }}><InstagramIcon fontSize="small" /></span> <span onClick={Twitter} style={{ margin: '0px 3px' }}><XIcon fontSize="small" /></span> <span onClick={GitHub} style={{ margin: '0px 3px' }}><GitHubIcon fontSize="small" /></span></span>
+            <span style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} className="navbar-brand brand" id="logo" href="#">Kornae Miller <VerifiedIcon sx={{marginLeft:'3px', color:'#189cf1'}} fontSize='small' /></span>
             <Divider sx={{ my: 2 }} />
 
             <div className='container' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
