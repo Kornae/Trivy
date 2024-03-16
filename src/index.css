@@ -362,14 +362,6 @@ body {
   padding: 0px 50px;
 }
 
-.answer1:hover,
-.answer2:hover,
-.answer3:hover,
-.answer4:hover {
-  background-color: #dee3e739;
-  color: #000000bc;
-}
-
 .answerBorder {
   border: 0.1px solid #dae2ed98 !important;
 }

@@ -10,6 +10,19 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import Sheet from '@mui/joy/Sheet';
 
 export default function ColorInversionFooter() {
+
+    let Instagram = () => {
+        window.location = 'https://www.instagram.com/2kmer/?hl=en'
+    }
+
+    let Twitter = () => {
+        window.location = 'https://twitter.com/2kmer_?lang=en'
+    }
+
+    let GitHub = () => {
+        window.location = 'https://github.com/Kornae'
+    }
+
     return (
         <Sheet
             variant="solid"
@@ -20,7 +33,7 @@ export default function ColorInversionFooter() {
                 height: '100%',
             }}
         >
-            <span style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} className="navbar-brand brand" id="logo" href="#"> <span style={{ margin: '0px 3px' }}><InstagramIcon fontSize="small" /></span> <span style={{ margin: '0px 3px' }}><XIcon fontSize="small" /></span> <span style={{ margin: '0px 3px' }}><GitHubIcon fontSize="small" /></span></span>
+            <span style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} className="navbar-brand brand" id="logo" href="#"> <span onClick={Instagram} style={{ margin: '0px 3px' }}><InstagramIcon fontSize="small" /></span> <span onClick={Twitter} style={{ margin: '0px 3px' }}><XIcon fontSize="small" /></span> <span onClick={GitHub} style={{ margin: '0px 3px' }}><GitHubIcon fontSize="small" /></span></span>
             <Divider sx={{ my: 2 }} />
 
             <div className='container' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
