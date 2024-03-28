@@ -162,11 +162,11 @@ const StyledAutocompleteRoot = styled('div')(
   padding: 3px;
   overflow: hidden;
 @media (min-width: 1023px) {
-  min-width: 300px;
+  min-width: 450px;
   }
 
   @media (min-width: 768px) and (max-width: 1023px) {
-  min-width: 100px;
+  min-width: 300px;
   }
 
   @media (min-width: 368px) and (max-width: 767px){
