@@ -9,24 +9,11 @@ export const dataLoader = async () => {
     const index = entertainment.findIndex((item) => item.title === path.slice(1) || item.alt === path.slice(1));
     let api = entertainment[index].api;
     const res = await fetch(api);
-    const quizData = await res.json()
-
+    const quizData = await res.json();
     return quizData.results;
 }
 
 function QuizTemplate(props) {
-    useLoaderData().push({
-        "category": null,
-        "type": null,
-        "difficulty": null,
-        "question": null,
-        "correct_answer": null,
-        "incorrect_answers": [
-            null,
-            null,
-            null
-        ]
-    })
     const loaderData = useLoaderData();
     const [count, setCount] = useState(0);
     const [score, setScore] = useState(0);
@@ -37,6 +24,7 @@ function QuizTemplate(props) {
     const [isCorrect, setIsCorrect] = useState(false);
     const [isIncorrect, setIsIncorrect] = useState(false);
     const [questionArray, setQuestionArray] = useState([]);
+    const [num, setNum] = useState([])
 
     const path = window.location.search;
     const index = entertainment.findIndex((item) => item.title === path.slice(1) || item.alt === path.slice(1));
@@ -45,17 +33,31 @@ function QuizTemplate(props) {
     const category = entertainment[index].category;
 
     useEffect(() => {
-        const questions = loaderData[count].question;
-        const shuffledArray = [...loaderData[count].incorrect_answers, loaderData[count].correct_answer].sort(() => Math.random() - 0.5);
-        setQuestionArray(shuffledArray);
-        setQuizQuestion(questions);
+        if (loaderData.length > count && loaderData[count]) {
+            console.log(count)
+            console.log(loaderData[0])
+            const questions = loaderData[count].question;
+            const shuffledArray = [...loaderData[count].incorrect_answers, loaderData[count].correct_answer].sort(() => Math.random() - 0.5);
+            setQuestionArray(shuffledArray);
+            setQuizQuestion(questions);
+        }
     }, [count, loaderData]);
 
-    let correctAnswer = decodeURIComponent(useLoaderData()[count].correct_answer);
-    const qA1 = decodeURIComponent(questionArray[0]);
-    const qA2 = decodeURIComponent(questionArray[1]);
-    const qA3 = decodeURIComponent(questionArray[2]);
-    const qA4 = decodeURIComponent(questionArray[3]);
+    let correctAnswer = '';
+    if (loaderData.length > count && loaderData[count]) {
+        correctAnswer = decodeURIComponent(loaderData[count].correct_answer);
+    }
+
+    let qA1 = '';
+    let qA2 = '';
+    let qA3 = '';
+    let qA4 = '';
+    if (questionArray.length === 4) {
+        qA1 = decodeURIComponent(questionArray[0]);
+        qA2 = decodeURIComponent(questionArray[1]);
+        qA3 = decodeURIComponent(questionArray[2]);
+        qA4 = decodeURIComponent(questionArray[3]);
+    }
 
     const handleKeyDown = (event) => {
         if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
@@ -78,12 +80,13 @@ function QuizTemplate(props) {
 
         setTimeout(function () {
             setCount(count + 1)
+            setNum(prevNum => [...prevNum, count]);
             setIsCorrect(false)
             setIsIncorrect(false)
             setIsSelect(false)
         }, 1000);
     }
-
+    console.log(num)
     let returnHome = () => {
         window.location = '/'
     }
@@ -121,7 +124,7 @@ function QuizTemplate(props) {
         ...baseButtonStyle
     };
 
-if (count < 10) {
+    if (count < 10) {
         return (
             <QuizCard
                 buttonStyle1={buttonStyle1}
